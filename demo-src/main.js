@@ -1,20 +1,14 @@
 import Vue from 'vue'
-import Home from './components/Home'
-import VueRouter from 'vue-router'
-
+import app from './components/app'
+import router from './router'
+import vui from 'vui'
+import 'vuiss'
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-
-const routes = [
-  { path: '/', component: Home }
-]
-
-const router = new VueRouter({
-  routes: routes
-})
+Vue.use(vui)
 /*eslint-disable */
 new Vue({
   el: '#app',
   router,
-  template: '<Home/>',
-  components: { Home }
+  template: '<app/>',
+  components: { app }
 })

@@ -10,9 +10,9 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage",
     "build:file": "node build/bin/build-entry.js",
-    "build:theme": "node build/bin/gen-cssfile.js && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
+    "build:theme": "node build/bin/gen-cssfile.js && gulp build --gulpfile packages/theme-chalk/gulpfile.js &&node build/bin/gen-cssfolder.js ",
     "dist": "node build/dist.js",
-    "build:start": "npm run clean && npm run build:file && npm run build:theme && npm run dist",
+    "build:start": " npm run build:file  && npm run dist &&  npm run build:theme",
     "doc": "node docs/doc-server.js",
     "dev:demo": "webpack-dev-server --inline --progress --config build/webpack.dev.demo.conf.js",
     "build:demo": "node build/demo.js"

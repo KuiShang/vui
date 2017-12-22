@@ -25,10 +25,12 @@
           Radio <span class="item-note">单选框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </li>
-        <li class="item-icon-right" @click.native="$router.forward('/basic/checkbox')">
+        
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'checkbox'}">
           Checkbox <span class="item-note">复选框</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
+        </router-link>
+
         <li class="item-icon-right" @click.native="$router.forward('/basic/toggle')">
           Toggle <span class="item-note">开关按钮</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -142,6 +144,7 @@
       </ul>
       <div class="footer"></div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 <style>
