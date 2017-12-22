@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "a simple for doc",
+  "main": "doc-server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "kk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
