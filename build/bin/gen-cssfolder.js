@@ -1,20 +1,11 @@
 const path = require('path')
 const fs=require('fs');
 
-const baseUrl = path.resolve(__dirname, '../../', 'lib/theme-chalk' )
-// if (!fs.existsSync(baseUrl)) {
-//     fs.mkdirSync(baseUrl);
-//     console.log('创建文件夹：', baseUrl)
-// }
-
-
-
 var stat=fs.stat;
 
 var copy=function(src,dst){
     //读取目录
     fs.readdir(src,function(err,paths){
-        console.log(paths)
         if(err){
             throw err;
         }
