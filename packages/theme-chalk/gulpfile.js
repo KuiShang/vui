@@ -17,7 +17,7 @@ gulp.task('compile', function () {
 })
 
 gulp.task('copyfont', function () {
-  return gulp.src('./src/ionic/ionicons.*')
+  return gulp.src('./src/*.ttf')
     .pipe(cssmin())
     .pipe(gulp.dest('./lib'))
 })

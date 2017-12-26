@@ -1,66 +1,97 @@
 <template>
-  <div class="list list-ios von-checkbox">
-    <div class="item item-borderless item-icon-right"
-           v-for="(option, i) in options" 
-           @click="onClick(i)"
-           :key="i"
-           >
-      <div class="hairline-top" v-if="i > 0"></div>
-      <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i" v-model="v" :value="i">
-      <span v-text="option"></span>
-      <i
-        :class="{
-          'icon ion-ios-checkmark-empty assertive': v.indexOf(i) > -1 && theme == 'assertive',
-          'icon ion-ios-checkmark-empty positive': v.indexOf(i) > -1 && theme == 'positive',
-          'icon ion-ios-checkmark-empty balanced': v.indexOf(i) > -1 && theme == 'balanced',
-          'icon ion-ios-checkmark-empty energized': v.indexOf(i) > -1 && theme == 'energized',
-          'icon ion-ios-checkmark-empty calm': v.indexOf(i) > -1 && theme == 'calm',
-          'icon ion-ios-checkmark-empty royal': v.indexOf(i) > -1 && theme == 'royal',
-          'icon ion-ios-checkmark-empty dark': v.indexOf(i) > -1 && theme == 'dark'
-        }"
-      >
-      </i>
-      <div class="hairline-bottom" v-if="i < options.length - 1"></div>
-    </div>
+  <div
+    class="checkbox"
+    :class="[
+      `checkbox--${shape}`, {
+      'checkbox--disabled': isDisabled
+    }]">
+    <span class="checkbox__input">
+      <input
+        v-model="currentValue"
+        type="checkbox"
+        class="checkbox__control"
+        :disabled="isDisabled"
+      />
+      <VUIcon name="success" />
+    </span>
+    <span class="checkbox__label" @click="onClickLabel">
+      <slot></slot>
+    </span>
   </div>
 </template>
+
 <script>
-  export default{
-    name: 'VUCheckBox',
-    props: {
-      options: {
-        type: Array,
-        required: true
+import findParent from '../../../src/mixins/find-parent'
+export default {
+  name: 'VUCheckbox',
+  mixins: [findParent],
+  props: {
+    value: {},
+    disabled: Boolean,
+    name: [String, Number],
+    shape: {
+      type: String,
+      default: 'round'
+    }
+  },
+  watch: {
+    value(val) {
+      this.$emit('change', val);
+    }
+  },
+  computed: {
+    // whether is in checkbox-group
+    isGroup() {
+      return !!this.findParentByName('VUCheckboxGroup');
+    },
+
+    currentValue: {
+      get() {
+        return this.isGroup && this.parentGroup ? this.parentGroup.value.indexOf(this.name) !== -1 : this.value;
       },
-      value: {
-        type: [Array, Number],
-        required: true
-      },
-      theme: {
-        type: String,
-        default: 'assertive'
-      }
-    },
-    computed: {
-      v: function () {
-        return this.value
-      }
-    },
-    data() {
-      return {
-        checkboxName: 'von-checkbox-' + Math.random().toString(36).substring(3, 6)
-      }
-    },
-    methods: {
-      onClick(i) {
-        let index = this.v.indexOf(i)
-        if (index == -1) {
-          this.v.push(i)
+
+      set(val) {
+        if (this.isGroup && this.parentGroup) {
+          const parentValue = this.parentGroup.value.slice();
+          if (val) {
+            /* istanbul ignore else */
+            if (parentValue.indexOf(this.name) === -1) {
+              parentValue.push(this.name);
+              this.parentGroup.$emit('input', parentValue);
+            }
+          } else {
+            const index = parentValue.indexOf(this.name);
+            /* istanbul ignore else */
+            if (index !== -1) {
+              parentValue.splice(index, 1);
+              this.parentGroup.$emit('input', parentValue);
+            }
+          }
         } else {
-          this.v.splice(index, 1)
+          this.$emit('input', val);
         }
-        this.v.sort()
+      }
+    },
+
+    isChecked() {
+      const { currentValue } = this;
+      if ({}.toString.call(currentValue) === '[object Boolean]') {
+        return currentValue;
+      } else if (currentValue !== null && currentValue !== undefined) {
+        return currentValue === this.name;
+      }
+    },
+
+    isDisabled() {
+      return (this.isGroup && this.parentGroup && this.parentGroup.disabled) || this.disabled;
+    }
+  },
+  methods: {
+    onClickLabel() {
+      if (!this.isDisabled) {
+        this.currentValue = !this.currentValue;
       }
     }
   }
+}
 </script>

@@ -5,9 +5,15 @@
       <div class="item item-divider">
         选择感兴趣的板块:
       </div>
-
-      <VUCheckBox :options="topics" v-model="chosenTopics" theme="positive"></VUCheckBox>
-
+      <VUCheckboxGroup
+      v-model="result"
+      >
+      <VUCheckbox  v-for="(item, index) in list" :key="index"
+      :name="item"
+       >
+      复选框 {{ item }}
+      </VUCheckbox>
+      </VUCheckboxGroup>
       <p class="padding">
         chosen topics: {{ chosenTopics }}
       </p>
@@ -18,8 +24,10 @@
   export default{
     data() {
       return {
-        chosenTopics: [],
-        topics: ["娱乐", "电影", "减肥", "搞笑", "科技"]
+        chosenTopics: true,
+        topics: ["娱乐", "电影", "减肥", "搞笑", "科技"],
+        list: ['a', 'b', 'c'],
+        result: ['a', 'b']
       }
     },
 

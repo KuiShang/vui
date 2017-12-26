@@ -1,0 +1,87 @@
+@mixin b($block) {
+    $B: 'kk'+'-'+$block !global;
+    .#{$B} {
+        @content;
+    }
+}
+
+$namespace: 'el';
+$element-separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
+@function hitAllSpecialNestRule($selector) {
+    @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
+
+@function containsModifier($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector, $modifier-separator) {
+        @return true;
+    }
+    @else {
+        @return false;
+    }
+}
+
+@function containWhenFlag($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector, '.' + $state-prefix) {
+        @return true
+    }
+    @else {
+        @return false
+    }
+}
+
+@function containPseudoClass($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector, ':') {
+        @return true
+    }
+    @else {
+        @return false
+    }
+}
+
+$B: 'kk'+'-';
+@mixin e($element) {
+    $E: $element !global;
+    $selector: &;
+    $currentSelector: "";
+    @each $unit in $element {
+        $currentSelector: #{$currentSelector + "." + $B + '--' + $unit + ","};
+    }
+    @if hitAllSpecialNestRule($selector) {
+        @at-root {
+            #{$selector} {
+                #{$currentSelector} {
+                    @content;
+                }
+            }
+        }
+    }
+    @else {
+        @at-root {
+            #{$currentSelector} {
+                @content;
+            }
+        }
+    }
+}
+
+.aa {
+    color: red;
+    .cc--primary {
+        color: yellow;
+        .bb {
+            color: blue;
+            @include e(original) {
+                opacity: 0;
+                outline: none;
+                position: absolute;
+                margin: 0;
+                left: -999px;
+            }
+        }
+    }
+}
