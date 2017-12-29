@@ -1,40 +1,43 @@
 @import './common/var.scss';
-
-$van-checkbox-size: 20px;
-
-.van-checkbox {
+@import "./mixins/mixins";
+$vui-checkbox-size: 20px;
+@include b(checkbox) {
   overflow: hidden;
   user-select: none;
-
-  .van-icon-success {
-    color: $white;
-    display: block;
-    font-size: 12px;
-    text-align: center;
-    pointer-events: none;
-    border: 1px solid #aaa;
-    width: $van-checkbox-size;
-    height: $van-checkbox-size;
-    box-sizing: border-box;
-
-    &::before {
-      margin: 0 auto;
-      line-height: $van-checkbox-size;
-    }
+  &::before {
+    margin: 0 auto;
+    line-height: $vui-checkbox-size;
   }
-
-  &__input,
-  &__label {
+  @include e(input) {
     display: inline-block;
     vertical-align: middle;
-  }
-
-  &__input {
     position: relative;
-    height: $van-checkbox-size;
-  }
+    height: $vui-checkbox-size;
+    .custom-vui-icon-success {
+      color: $white;
+      display: block;
+      font-size: 12px;
+      text-align: center;
+      pointer-events: none;
+      border: 1px solid #aaa;
+      width: $vui-checkbox-size;
+      height: $vui-checkbox-size;
+      box-sizing: border-box;
+      margin: 0;
+      &::before {
+        margin: 0 auto;
+        line-height: $vui-checkbox-size;
+      }
+    }
 
-  &__control {
+  }
+  @include e(label) {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    line-height: $vui-checkbox-size;
+  }
+  @include e(control) {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,34 +45,16 @@ $van-checkbox-size: 20px;
     margin: 0;
     width: 100%;
     height: 100%;
-  }
 
-  &__label {
-    margin-left: 10px;
-    line-height: $van-checkbox-size;
-  }
+    &:checked + .custom-vui-icon-success  {
+      border-color: $green;
+      background-color: $green;
+    }
 
-  &--round {
-    .van-icon-success {
+  }
+  @include m(round) {
+    .custom-vui-icon-success {
       border-radius: 100%;
-    }
-  }
-
-  &__control:checked + .van-icon-success {
-    border-color: $green;
-    background-color: $green;
-  }
-
-  &--disabled {
-    .van-icon-success {
-      color: $background-color;
-      border-color: $gray-light;
-      background-color: currentColor;
-    }
-
-    .van-checkbox__control:checked + .van-icon-success {
-      border-color: $gray-light;
-      background-color: $gray-light;
     }
   }
 }

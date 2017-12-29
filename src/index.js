@@ -2,12 +2,12 @@
 
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
-import Icon from '../packages/icon/index.js'
+import IconButton from '../packages/icon-button/index.js'
 
 const components = [
   Checkbox,
   CheckboxGroup,
-  Icon
+  IconButton
 ]
 
 const install = (Vue, opts = {}) => {
@@ -26,7 +26,7 @@ const vui = {
   install,
   Checkbox,
   CheckboxGroup,
-  Icon
+  IconButton
 }
 
 export default vui

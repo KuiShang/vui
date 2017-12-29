@@ -31,6 +31,11 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
+         <router-link tag="li" class="item-icon-right" :to="{ name: 'iconbutton'}">
+          iconbutton <span class="item-note">图标按钮</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
         <li class="item-icon-right" @click.native="$router.forward('/basic/toggle')">
           Toggle <span class="item-note">开关按钮</span>
           <i class="icon ion-ios-arrow-right"></i>

@@ -1,20 +1,20 @@
 <template>
   <div
-    class="checkbox"
+    class="vu-checkbox"
     :class="[
-      `checkbox--${shape}`, {
-      'checkbox--disabled': isDisabled
+      `vu-checkbox--${shape}`, {
+      'vu-checkbox--disabled': isDisabled
     }]">
-    <span class="checkbox__input">
+    <span class="vu-checkbox__input">
       <input
         v-model="currentValue"
         type="checkbox"
-        class="checkbox__control"
+        class="vu-checkbox__control"
         :disabled="isDisabled"
       />
-      <VUIcon name="success" />
+      <i class="vui-icon vui-icon-success custom-vui-icon-success" />
     </span>
-    <span class="checkbox__label" @click="onClickLabel">
+    <span class="vu-checkbox__label" @click="onClickLabel">
       <slot></slot>
     </span>
   </div>

@@ -15,9 +15,10 @@
       </VUCheckbox>
       </VUCheckboxGroup>
       <p class="padding">
-        chosen topics: {{ chosenTopics }}
+        chosen topics: {{ result }}
       </p>
     </div>
+
   </div>
 </template>
 <script>

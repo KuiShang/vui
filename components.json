@@ -1,5 +1,5 @@
 {
     "checkbox": "./packages/checkbox/index.js",
     "checkbox-group": "./packages/checkbox-group/index.js",
-    "icon": "./packages/icon/index.js"
+    "icon-button": "./packages/icon-button/index.js"
 }
