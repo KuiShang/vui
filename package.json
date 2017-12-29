@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Mobile Component Library for Vue.js.",
   "author": "kk <shangkuikui@gomeplus.com>",
+  "main": "lib/vui.js",
   "private": true,
   "scripts": {
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",

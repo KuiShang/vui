@@ -34,6 +34,6 @@ npm test
 
 
 ## LICENSE
-MIT
+GPL
 
 
