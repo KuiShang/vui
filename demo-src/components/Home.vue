@@ -5,7 +5,23 @@
       <div class="item item-divider">基础</div>
 
       <ul class="list-ios hl-list-borderless">
-        <li class="item-icon-right" @click.native="$router.forward('/basic/button')">
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'checkbox'}">
+          Checkbox <span class="item-note">复选框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'swiper'}">
+          iconbutton <span class="item-note">swiper轮播</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'iconbutton'}">
+          iconbutton <span class="item-note">图标按钮</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+
+         <li class="item-icon-right" @click.native="$router.forward('/basic/button')">
           Button <span class="item-note">按钮</span>
           <i class="icon ion-ios-arrow-right"></i>
         </li>
@@ -25,16 +41,6 @@
           Radio <span class="item-note">单选框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </li>
-        
-        <router-link tag="li" class="item-icon-right" :to="{ name: 'checkbox'}">
-          Checkbox <span class="item-note">复选框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </router-link>
-
-         <router-link tag="li" class="item-icon-right" :to="{ name: 'iconbutton'}">
-          iconbutton <span class="item-note">图标按钮</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </router-link>
 
         <li class="item-icon-right" @click.native="$router.forward('/basic/toggle')">
           Toggle <span class="item-note">开关按钮</span>
@@ -153,26 +159,23 @@
   </div>
 </template>
 <style>
-  .footer {
-    height: 40px;
-  }
+.footer {
+  height: 40px;
+}
 </style>
 <script>
-  export default {
-    data() {
-      return {
-        sidebar: undefined,
-        sidebarRight: undefined
-      }
-    },
+export default {
+  data() {
+    return {
+      sidebar: undefined,
+      sidebarRight: undefined
+    };
+  },
 
-    mounted() {
-    },
+  mounted() {},
 
-    destroyed() {
-    },
+  destroyed() {},
 
-    methods: {
-    }
-  }
+  methods: {}
+};
 </script>

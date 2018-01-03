@@ -1,5 +1,7 @@
 {
     "checkbox": "./packages/checkbox/index.js",
     "checkbox-group": "./packages/checkbox-group/index.js",
-    "icon-button": "./packages/icon-button/index.js"
+    "icon-button": "./packages/icon-button/index.js",
+    "swipe-item": "./packages/swipe-item/index.js",
+    "swipe": "./packages/swipe/index.js"
 }

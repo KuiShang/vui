@@ -3,11 +3,15 @@
 import Checkbox from '../packages/checkbox/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import IconButton from '../packages/icon-button/index.js'
+import SwipeItem from '../packages/swipe-item/index.js'
+import Swipe from '../packages/swipe/index.js'
 
 const components = [
   Checkbox,
   CheckboxGroup,
-  IconButton
+  IconButton,
+  SwipeItem,
+  Swipe
 ]
 
 const install = (Vue, opts = {}) => {
@@ -26,7 +30,9 @@ const vui = {
   install,
   Checkbox,
   CheckboxGroup,
-  IconButton
+  IconButton,
+  SwipeItem,
+  Swipe
 }
 
 export default vui

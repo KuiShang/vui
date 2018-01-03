@@ -1,0 +1,43 @@
+@import './common/var.scss';
+@import "./mixins/mixins";
+$vui-swipe-indicator: 6px;
+@include b(swipe) {
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    &-item {
+        float: left;
+        height: 100%;
+    }
+    @include e(track) {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    @include e(indicators) {
+        left: 50%;
+        bottom: 10px;
+        position: absolute;
+        height: $vui-swipe-indicator;
+        transform: translate3d(-50%, 0, 0);
+        > i {
+            border-radius: 100%;
+            vertical-align: top;
+            display: inline-block;
+            background-color: $gray-dark;
+            width: $vui-swipe-indicator;
+            height: $vui-swipe-indicator;
+            &:not(:last-child) {
+              margin-right: $vui-swipe-indicator;
+            }
+          }
+    }
+    @include e(indicator) {
+        height: 100%;
+        overflow: hidden;
+        @include m(active) {
+            background-color: $orange;
+        }
+    }
+
+}
