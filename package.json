@@ -14,7 +14,7 @@
     "build:theme": "node build/bin/gen-cssfile.js && gulp build --gulpfile packages/theme-chalk/gulpfile.js &&node build/bin/gen-cssfolder.js ",
     "dist": "node build/dist.js",
     "build:start": " npm run build:file  && npm run dist &&  npm run build:theme",
-    "doc": "node docs/doc-server.js",
+    "doc": "cd docs && node doc-server.js",
     "dev:demo": "webpack-dev-server --inline --progress --config build/webpack.dev.demo.conf.js",
     "build:demo": "node build/demo.js"
   },

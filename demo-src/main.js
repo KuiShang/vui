@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import app from './components/app'
 import router from './router'
-import vui from 'vui'
-// import 'vuiss'
+// import vui from 'vui'
+// require assets/normalize.css"
+import './assets/normalize.css'
+import vui from '../src/index.js'
 import '../packages/theme-chalk/src/index.scss'
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 Vue.use(vui)
 /*eslint-disable */
 new Vue({

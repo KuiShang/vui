@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "a simple for doc",
+  "description": "a simple server for doc",
   "main": "doc-server.js",
   "scripts": {
     "test": "test"

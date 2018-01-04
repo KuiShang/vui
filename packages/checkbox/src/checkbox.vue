@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import findParent from '../../../src/mixins/find-parent'
+import findParent from '@/mixins/find-parent'
 export default {
   name: 'VUCheckbox',
   mixins: [findParent],

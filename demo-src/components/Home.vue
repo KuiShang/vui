@@ -2,7 +2,7 @@
   <div class="page has-navbar">
     <div class="page-content">
       <!-- Basic -->
-      <div class="item item-divider">基础</div>
+      <h3>基础</h3>
 
       <ul class="list-ios hl-list-borderless">
         <router-link tag="li" class="item-icon-right" :to="{ name: 'checkbox'}">
@@ -11,20 +11,27 @@
         </router-link>
 
         <router-link tag="li" class="item-icon-right" :to="{ name: 'swiper'}">
-          iconbutton <span class="item-note">swiper轮播</span>
+           <span class="item-note">swiper轮播</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
         <router-link tag="li" class="item-icon-right" :to="{ name: 'iconbutton'}">
-          iconbutton <span class="item-note">图标按钮</span>
+           <span class="item-note">图标按钮</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'loading'}">
+           <span class="item-note">loading</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'button'}">
+           <span class="item-note">button</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
 
-         <li class="item-icon-right" @click.native="$router.forward('/basic/button')">
-          Button <span class="item-note">按钮</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
+  
         <li class="item-icon-right" @click.native="$router.forward('/basic/mdButton')">
           MdButton <span class="item-note">Material Design 风格</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -69,7 +76,7 @@
       </ul>
 
       <!-- layout -->
-      <div class="item item-divider">布局</div>
+      <h3>布局</h3>
       <ul class="list-ios hl-list-borderless">
         <li class="item-icon-right" @click.native="$router.forward('/layout/header')">
           Header <span class="item-note">页头</span>
@@ -98,7 +105,7 @@
       </ul>
 
       <!-- advanced -->
-      <div class="item item-divider">高级</div>
+      <h3>高级</h3>
       <ul class="list-ios hl-list-borderless">
         <li class="item-icon-right" @click.native="$router.forward('/advanced/swiper')">
           Swiper <span class="item-note">轮播</span>
