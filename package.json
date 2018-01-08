@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test": "npm run unit",
+    "test": "karma start test/unit/karma.conf.js --single-run",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage",
     "build:file": "node build/bin/build-entry.js",
@@ -19,6 +19,12 @@
     "build:demo": "node build/demo.js"
   },
   "dependencies": {
+    "avoriaz": "^6.3.0",
+    "babel-polyfill": "^6.26.0",
+    "isparta-loader": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "progress-bar-webpack-plugin": "^1.10.0",
+    "style-loader": "^0.19.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {

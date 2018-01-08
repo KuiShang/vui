@@ -1,24 +1,23 @@
-// This is a karma config file. For more details see
-//   http://karma-runner.github.io/0.13/config/configuration-file.html
-// we are also using it with karma-webpack
-//   https://github.com/webpack/karma-webpack
+require('babel-polyfill')
 
-var webpackConfig = require('../../build/webpack.test.conf')
+require('babel-core/register')({
+  presets: [require('babel-preset-env')]
+})
+
+var getWebpackConfig = require('./get-webpack-conf')
+var travis = process.env.TRAVIS
 
 module.exports = function (config) {
   config.set({
-    // to run in additional browsers:
-    // 1. install corresponding karma launcher
-    //    http://karma-runner.github.io/0.13/config/browsers.html
-    // 2. add it to the `browsers` array below.
-    browsers: ['PhantomJS'],
-    frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
+    browsers: travis ? ['PhantomJS'] : ['PhantomJS', 'Chrome'],
+    frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap']
+      './index.js': ['webpack'],
+      'test/unit/!(components)/**/*.vue': ['coverage']
     },
-    webpack: webpackConfig,
+    webpack: getWebpackConfig(getTestFileName()),
     webpackMiddleware: {
       noInfo: true
     },
@@ -28,6 +27,12 @@ module.exports = function (config) {
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }
       ]
-    }
+    },
+    singleRun: false
   })
+}
+
+function getTestFileName () {
+  const flagIndex = process.argv.indexOf('--file')
+  return flagIndex !== -1 ? process.argv[flagIndex + 1] : ''
 }

@@ -1,13 +1,16 @@
-import Vue from 'vue'
+require('packages/theme-chalk/src/index.scss')
 
-Vue.config.productionTip = false
+// hack for test touch event
+window.ontouchstart = {}
 
-// require all test files (files that ends with .spec.js)
-const testsContext = require.context('./specs', true, /\.spec$/)
-testsContext.keys().forEach(testsContext)
-
-// require all src files except main.js for coverage.
-// you can also change this to match only the subset of files that
-// you want coverage for.
-const srcContext = require.context('../../src', true, /^\.\/(?!main(\.js)?$)/)
-srcContext.keys().forEach(srcContext)
+// 读取配置文件，判断运行单个测试文件还是所有测试文件
+const testsReq = require.context('./specs', true, /\.spec$/)
+if (process.env.TEST_FILE) {
+  testsReq.keys().forEach((file) => {
+    if (file.indexOf(process.env.TEST_FILE) !== -1) {
+      testsReq(file)
+    }
+  })
+} else {
+  testsReq.keys().forEach(testsReq)
+}
