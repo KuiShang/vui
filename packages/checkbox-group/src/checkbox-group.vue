@@ -1,5 +1,5 @@
 <template>
-  <div class="checkbox-group" aria-label="checkbox-group">
+  <div class="vu-checkbox-group" aria-label="vu-checkbox-group">
     <slot></slot>
   </div>
 </template>

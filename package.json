@@ -8,6 +8,7 @@
   "scripts": {
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "karma start test/unit/karma.conf.js --single-run",
+    "test:watch": "karma start test/unit/karma.conf.js",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage",
     "build:file": "node build/bin/build-entry.js",

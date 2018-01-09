@@ -41,6 +41,7 @@ function getWebpackConfig (testFileName) {
         packages: path.resolve(process.cwd(), 'packages'),
         examples: path.resolve(process.cwd(), 'examples'),
         vue$: 'vue/dist/vue.common.js',
+        '@': path.resolve(process.cwd(), 'src'),
         'vui': path.resolve(process.cwd())
       }
     },
@@ -101,7 +102,7 @@ function getWebpackConfig (testFileName) {
         {
           // test: /packages\/.*\/src\/.vue$/,
           test: /\.vue$/,
-          // exclude: /packages\/swipe.*\.vue$/,
+          exclude: /packages\/swipe.*\.vue$/,
           use: [
             {
               loader: 'vue-loader',

@@ -5,59 +5,193 @@ title: API
 ## API
 
 <p class="danger">
-  该文档内所有演示代码，均可在[这里](https://github.com/wangdahoo/vonic-documents/blob/master/demo/)找到。
+  该文档内所有演示代码，均可在[这里](http://code.ds.gome.com.cn/gitlab/meidian-crd/open/vui)找到。
 </p>
 
-### 组件
+## 组件
 
 ----------
 
-#### MdButton
+### Button 按钮
 
-##### 用法
+#### 使用指南
+``` javascript
+import { Button } from 'vui';
+
+Vue.use(Button);
+```
+
+#### 代码演示
+
+##### 按钮类型
+支持`default`、`primary`、`danger`三种类型，默认为`default`
 
 ```html
-  <md-button class="button button-positive" @click.native="clicked()">
-    Click Me
-  </md-button>
-
-  <!-- 除了适用所有 ionic 自带的按钮类外，新增 `button-fab` 类以支持绘制 fab 风格按钮 -->
-
-  <md-button class="button button-energized button-fab">
-    <i class="icon ion-home"></i>
-  </md-button>
+<vu-button type="default">默认按钮</vu-button>
+<vu-button type="primary">主要按钮</vu-button>
+<vu-button type="danger">危险按钮</vu-button>
 ```
+
+##### 按钮尺寸
+支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
+
+```html 
+<vu-button size="large">大号按钮</vu-button>
+<vu-button size="normal">普通按钮</vu-button>
+<vu-button size="small">小型按钮</vu-button>
+<vu-button size="mini">迷你按钮</vu-button>
+```
+
+##### 禁用状态
+通过`disabled`属性来禁用按钮，此时按钮不可点击
+
+```html
+<vu-button disabled>禁用状态</vu-button>
+```
+
+##### 加载状态
+
+```html 
+<vu-button loading />
+<vu-button loading type="primary" />
+```
+
+##### 自定义按钮标签
+
+按钮标签默认为`button`，可以使用`tag`属性来修改按钮标签
+
+```html 
+<vu-button tag="a" href="http://code.ds.gome.com.cn/gitlab/meidian-crd/open/vui" target="_blank">
+  按钮
+</vu-button>
+```
+
+##### 页面底部操作按钮
+
+```html 
+<vu-button type="primary" bottomAction>按钮</vu-button>
+```
+
+#### API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| type | 按钮类型 | `String` | `default` | `primary` `danger` |
+| size | 按钮尺寸 | `String` | `normal` | `large` `small` `mini` |
+| tag | 按钮标签 | `String` | `button` | 任意`HTML`标签 |
+| nativeType | 按钮类型（原生） | `String` | `''` | - |
+| diabled | 是否禁用 | `Boolean` |  `false` | - |
+| loading | 是否显示为加载状态 | `Boolean` |  `false` | - |
+| block | 是否为块级元素 | `Boolean` |   `false` | - |
+| bottomAction | 是否为底部行动按钮 | `Boolean` | `false` | - |
+
 
 > [演示](https://wangdahoo.github.io/vonic-documents/demo/#/MdButton)
 
 ----------
 
-#### VonInput
+### Checkbox 复选框
 
-##### 用法
+#### 使用指南
+``` javascript
+import { Checkbox, CheckboxGroup } from 'vui';
 
-```html
-<von-input 
-  type="text" 
-  v-model="username" 
-  placeholder="用户名/手机/邮箱" 
-  label="用户名">
-</von-input>
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 ```
 
-##### 属性
+#### 代码演示
 
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-| ----- | ----- | ----- | ----- | ----- |
-| type  | 类型 | String | 否 | text |
-| label  | 标签文字 | String | 否 | - |
-| value  | 值（用`v-model`替代以支持双向绑定） | String、Number | 是 | - |
-| placeholder | 占位符 | String | 否 | - |
-| floatingLabel | 开启悬浮标签 | String | 否 | false |
+##### 基础用法
+通过`v-model`绑定 checkbox 的勾选状态
 
-<p class="warning">
-  `VonInput` 的 `type` 属性只支持 `text`、`password`、`email`、`tel`
-</p>
+```html
+<vu-checkbox v-model="checked">复选框 1</vu-checkbox>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      checked: true
+    };
+  }
+};
+```
+
+##### 禁用状态
+
+```html
+<vu-checkbox v-model="checked" disabled>复选框 2</vu-checkbox>
+```
+
+##### Checkbox 组
+
+需要与`vu-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`vu-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
+
+```html
+<vu-checkbox-group v-model="result">
+  <vu-checkbox
+    v-for="(item, index) in list"
+    :key="index"
+    :name="item"
+  >
+    复选框 {{ item }}
+  </vu-checkbox>
+</vu-checkbox-group>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      list: ['a', 'b', 'c'],
+      result: ['a', 'b']
+    };
+  }
+};
+```
+
+##### 与 Cell 组件一起使用
+
+此时你需要再引入`Cell`和`CellGroup`组件
+
+```html
+<vu-checkbox-group v-model="result">
+  <vu-cell-group>
+    <vu-cell v-for="(item, index) in list" :key="index">
+      <vu-checkbox :name="item">复选框 {{ item }}</vu-checkbox>
+    </vu-cell>
+  </vu-cell-group>
+</vu-checkbox-group>
+```
+
+#### Checkbox API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| name | 标识 Checkbox 名称 | `Boolean` | `false` | - |
+| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
+| shape | 形状 | `String` | `round` | `square` |
+
+#### CheckboxGroup API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
+
+#### Checkbox Event
+
+| 事件名称 | 说明 | 回调参数 |
+|-----------|-----------|-----------|
+| change | 当绑定值变化时触发的事件 | 当前组件的值 |
+
+#### CheckboxGroup Event
+
+| 事件名称 | 说明 | 回调参数 |
+|-----------|-----------|-----------|
+| change | 当绑定值变化时触发的事件 | 当前组件的值 |
+
 
 > [演示](https://wangdahoo.github.io/vonic-documents/demo/#/VonInput)
 

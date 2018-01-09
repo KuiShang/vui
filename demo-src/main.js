@@ -8,9 +8,10 @@ import vui from '../src/index.js'
 import '../packages/theme-chalk/src/index.scss'
 Vue.use(vui)
 /*eslint-disable */
-new Vue({
+let s = new Vue({
   el: '#app',
   router,
   template: '<app/>',
   components: { app }
 })
+console.log(s)
