@@ -165,9 +165,19 @@
     <router-view></router-view>
   </div>
 </template>
-<style>
+<style scoped>
 .footer {
   height: 40px;
+}
+li {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  text-align: left;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,.26);
+  border-radius: 4px;
 }
 </style>
 <script>

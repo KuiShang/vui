@@ -5,7 +5,7 @@ title: API
 ## API
 
 <p class="danger">
-  该文档内所有演示代码，均可在[这里](http://code.ds.gome.com.cn/gitlab/meidian-crd/open/vui)找到。
+  该文档内所有演示代码，均可在[这里](http://10.112.178.20:9000)找到。
 </p>
 
 ## 组件
@@ -86,7 +86,7 @@ Vue.use(Button);
 | bottomAction | 是否为底部行动按钮 | `Boolean` | `false` | - |
 
 
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/MdButton)
+> [演示](http://10.112.178.20:9000/#/button)
 
 ----------
 
@@ -193,7 +193,7 @@ export default {
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 
 
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/VonInput)
+> [演示](http://10.112.178.20:9000/#/checkbox)
 
 ----------
 
