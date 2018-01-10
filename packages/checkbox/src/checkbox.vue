@@ -3,7 +3,7 @@
     class="vu-checkbox"
     :class="[
       `vu-checkbox--${shape}`, {
-      'vu-checkbox--disabled': isDisabled
+      'is-disabled': isDisabled
     }]">
     <span class="vu-checkbox__input">
       <input

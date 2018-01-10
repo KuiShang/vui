@@ -1,18 +1,33 @@
 <template>
   <div class="demo-loading">
     <div>
+      <p class="title">单色圆环</p>
+      <p>
       <VULoading type="circle" color="black" />
+      </p>
+      <p>
       <VULoading type="circle" color="white" />
+      </p>
     </div>
 
     <div>
+      <p class="title">渐变色圆环</p>
+      <p>
       <VULoading type="gradient-circle" color="black" />
+      </p>
+      <p>
       <VULoading type="gradient-circle" color="white" />
+      </p>
     </div>
 
     <div>
+       <p class="title">spinner</p>
+       <p>
       <VULoading type="spinner" color="black" />
+      </p>
+      <p>
       <VULoading type="spinner" color="white" />
+      </p>
     </div>
   </div>
 </template>
@@ -36,6 +51,7 @@ export default {
 
 <style lang="postcss">
 .demo-loading {
+  text-align: left;
   .vu-loading {
     display: inline-block;
     margin: 10px 0 10px 20px;

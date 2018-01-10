@@ -166,6 +166,7 @@
   </div>
 </template>
 <style scoped>
+
 .footer {
   height: 40px;
 }

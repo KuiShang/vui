@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div class="container-cut">
+      <div class="goback" @click="$router.go(-1)">Go Back</div>
       <router-view class="demo-container"/>
     </div>
   </div>
@@ -38,10 +39,23 @@ export default {
   height: 568px;
   box-sizing: border-box;
   position: absolute;
-  top:0px;
+  top:30px;
   left: 0px;
   overflow-y: scroll;
   overflow-x: hidden;
   background: #f2f2f4;
+}
+
+.goback {
+  height: 30px;
+  background-color: #fff;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 10px;
+  color: royalblue;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+
 }
 </style>
