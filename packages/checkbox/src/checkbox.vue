@@ -23,7 +23,7 @@
 <script>
 import findParent from '@/mixins/find-parent'
 export default {
-  name: 'VUCheckbox',
+  name: 'VuCheckbox',
   mixins: [findParent],
   props: {
     value: {},

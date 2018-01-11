@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'VUIconButton',
+  name: 'VuIconButton',
   props: {
     name: String,
     info: String

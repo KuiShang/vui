@@ -16,7 +16,7 @@
     ]"
       @click="onClick"
     >
-    <VULoading
+    <VuLoading
       v-if="loading"
       class="vu-button__icon-loading"
       type="circle"
@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import VULoading from 'vui/packages/loading'
+import VuLoading from 'vui/packages/loading'
 export default {
-  name: 'VUButton',
-  components: { VULoading },
+  name: 'VuButton',
+  components: { VuLoading },
   props: {
     block: Boolean,
     loading: Boolean,

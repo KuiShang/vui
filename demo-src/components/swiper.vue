@@ -1,20 +1,20 @@
 <template>
   <div class="demo-swipe">
     <div>
-      <VUSwipe :autoplay="3000">
-        <VUSwipeItem>1</VUSwipeItem>
-        <VUSwipeItem>2</VUSwipeItem>
-        <VUSwipeItem>3</VUSwipeItem>
-        <VUSwipeItem>4</VUSwipeItem>
-      </VUSwipe>
+      <vu-swipe :autoplay="3000">
+        <vu-swipeItem>1</vu-swipeItem>
+        <vu-swipeItem>2</vu-swipeItem>
+        <vu-swipeItem>3</vu-swipeItem>
+        <vu-swipeItem>4</vu-swipeItem>
+      </vu-swipe>
     </div>
 
     <div>
-      <VUSwipe :autoplay="3000">
-        <VUSwipeItem v-for="(image, index) in images" :key="index">
+      <vu-swipe :autoplay="3000">
+        <vu-swipeItem v-for="(image, index) in images" :key="index">
           <img :src="image" />
-        </VUSwipeItem>
-      </VUSwipe>
+        </vu-swipeItem>
+      </vu-swipe>
     </div>
   </div>
 </template>

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'VULoading',
+  name: 'VuLoading',
   props: {
     type: {
       type: String,

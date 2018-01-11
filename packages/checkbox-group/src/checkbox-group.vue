@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'VUCheckboxGroup',
+  name: 'VuCheckboxGroup',
 
   props: {
     value: {},
