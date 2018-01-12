@@ -4,7 +4,7 @@
       <div class="title">图标列表</div>
       <div class="container">
         <div span="8" v-for="icon in icons" :key="icon" class="item">
-          <VUIconButton :name="icon" />
+          <vu-iconButton :name="icon" />
           <span>{{ icon }}</span>
         </div>
       </div>

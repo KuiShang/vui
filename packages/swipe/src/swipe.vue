@@ -24,7 +24,7 @@
 <script>
 
 export default {
-  name: 'VUSwipe',
+  name: 'VuSwipe',
 
   props: {
     autoplay: Number,

@@ -1,41 +1,41 @@
 <template>
   <div class="demo demo-button">
     <div>
-      <VUButton type="default">{{ 'default' }}</VUButton>
-      <VUButton type="primary">{{ 'primary' }}</VUButton>
-      <VUButton type="danger">{{ 'danger' }}</VUButton>
+      <vu-button type="default">{{ 'default' }}</vu-button>
+      <vu-button type="primary">{{ 'primary' }}</vu-button>
+      <vu-button type="danger">{{ 'danger' }}</vu-button>
     </div>
 
     <div >
-      <VUButton size="large">{{ 'large' }}</VUButton>
-      <VUButton size="normal">{{ 'normal' }}</VUButton>
-      <VUButton size="small">{{ 'small' }}</VUButton>
-      <VUButton size="mini">{{ 'mini' }}</VUButton>
+      <vu-button size="large">{{ 'large' }}</vu-button>
+      <vu-button size="normal">{{ 'normal' }}</vu-button>
+      <vu-button size="small">{{ 'small' }}</vu-button>
+      <vu-button size="mini">{{ 'mini' }}</vu-button>
     </div>
 
     <div >
-      <VUButton disabled>{{ 'disabled' }}</VUButton>
+      <vu-button disabled>{{ 'disabled' }}</vu-button>
     </div>
 
     <div >
-      <VUButton loading></VUButton>
-      <VUButton loading type="primary"></VUButton>
+      <vu-button loading></vu-button>
+      <vu-button loading type="primary"></vu-button>
     </div>
 
     <div >
-      <VUButton tag="a" href="http://code.ds.gome.com.cn/gitlab/meidian-crd/open/vui" target="_blank">
+      <vu-button tag="a" href="http://code.ds.gome.com.cn/gitlab/meidian-crd/open/vui" target="_blank">
         {{ 'button' }}
-      </VUButton>
+      </vu-button>
     </div>
 
     <div >
-      <VUButton type="primary" bottomAction>{{ 'button' }}</VUButton>
+      <vu-button type="primary" bottomAction>{{ 'button' }}</vu-button>
 
         <div >
-          <VUButton bottomAction>{{ 'button' }}</VUButton>
+          <vu-button bottomAction>{{ 'button' }}</vu-button>
         </div>
         <div >
-          <VUButton type="primary" bottomAction>{{ 'button'}}</VUButton>
+          <vu-button type="primary" bottomAction>{{ 'button'}}</vu-button>
         </div>
     </div>
   </div>

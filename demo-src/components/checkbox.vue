@@ -2,26 +2,26 @@
   <div class="demo-checkbox">
     <div>
       <p class="title">基础用法</p>
-      <VUCheckbox v-model="checkbox1">{{ 'checkbox' }} 1</VUCheckbox>
+      <vu-checkbox v-model="checkbox1">{{ 'checkbox' }} 1</vu-checkbox>
     </div>
 
     <div >
       <p class="title">禁用状态</p>
-      <VUCheckbox :value="false" disabled>{{ 'checkbox' }} 2</VUCheckbox>
-      <VUCheckbox :value="true" disabled>{{ 'checkbox' }} 2</VUCheckbox>
+      <vu-checkbox :value="false" disabled>{{ 'checkbox' }} 2</vu-checkbox>
+      <vu-checkbox :value="true" disabled>{{ 'checkbox' }} 2</vu-checkbox>
     </div>
 
     <div>
       <p class="title">checkbox组</p>
-      <VUCheckbox-group v-model="result">
-        <VUCheckbox
+      <vu-checkbox-group v-model="result">
+        <vu-checkbox
           v-for="(item, index) in list"
           :key="index"
           :name="item"
         >
           {{ 'checkbox' }} {{ item }}
-        </VUCheckbox>
-      </VUCheckbox-group>
+        </vu-checkbox>
+      </vu-checkbox-group>
     </div>
   </div>
 </template>
