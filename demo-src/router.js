@@ -6,6 +6,8 @@ import iconbutton from './components/iconButton'
 import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
+import progress from './components/progress'
+
 Vue.use(Router)
 const routes = [{
   path: '/',
@@ -35,7 +37,12 @@ const routes = [{
   path: '/button',
   name: 'button',
   component: button
-}]
+},
+  {
+    path: '/progress',
+    name: 'progress',
+    component: progress
+  }]
 export default new Router({
   routes: routes
 })

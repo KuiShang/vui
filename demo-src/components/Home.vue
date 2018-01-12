@@ -30,8 +30,13 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'progress'}">
+          <span class="item-note">progress</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
-  
+
+
         <li class="item-icon-right" @click.native="$router.forward('/basic/mdButton')">
           MdButton <span class="item-note">Material Design 风格</span>
           <i class="icon ion-ios-arrow-right"></i>

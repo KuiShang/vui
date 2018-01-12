@@ -35,7 +35,7 @@ Vue.use(Button);
 ##### 按钮尺寸
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
-```html 
+```html
 <vu-button size="large">大号按钮</vu-button>
 <vu-button size="normal">普通按钮</vu-button>
 <vu-button size="small">小型按钮</vu-button>
@@ -51,7 +51,7 @@ Vue.use(Button);
 
 ##### 加载状态
 
-```html 
+```html
 <vu-button loading />
 <vu-button loading type="primary" />
 ```
@@ -60,7 +60,7 @@ Vue.use(Button);
 
 按钮标签默认为`button`，可以使用`tag`属性来修改按钮标签
 
-```html 
+```html
 <vu-button tag="a" href="http://code.ds.gome.com.cn/gitlab/meidian-crd/open/vui" target="_blank">
   按钮
 </vu-button>
@@ -68,7 +68,7 @@ Vue.use(Button);
 
 ##### 页面底部操作按钮
 
-```html 
+```html
 <vu-button type="primary" bottomAction>按钮</vu-button>
 ```
 
@@ -194,6 +194,60 @@ export default {
 
 
 > [演示](http://10.112.178.20:9000/#/checkbox)
+
+----------
+
+### Progress 进度条
+
+#### 使用指南
+``` javascript
+import { Progress } from 'vui';
+
+Vue.use(Progress);
+```
+
+#### 代码演示
+
+##### 基础用法
+
+进度条默认为蓝色，使用`percentage`属性来设置当前进度
+
+```html
+<vu-progress :percentage="0" />
+<vu-progress :percentage="46" />
+<vu-progress :percentage="100" />
+```
+
+
+##### 进度条置灰
+
+```html
+<vu-progress inactive :percentage="0" />
+<vu-progress inactive :percentage="46" />
+<vu-progress inactive :percentage="100" />
+```
+
+
+##### 样式定制
+
+可以使用`pivot-text`属性自定义文字，`color`属性自定义进度条颜色
+
+```html
+<vu-progress pivot-text="红色" color="#ed5050" :percentage="26" />
+<vu-progress pivot-text="橙色" color="#f60" :percentage="46" />
+<vu-progress pivot-text="黄色" color="#f09000" :percentage="66" />
+```
+
+#### API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| inactive | 是否置灰 | `Boolean` | `false` | - |
+| percentage | 进度百分比 | `Number` | `false` | `0-100` |
+| show-pivot | 是否显示进度文字 | `Boolean` | `true` | - |
+| pivot-text | 文字显示 | `String` | 百分比文字 | - |
+| color | 进度条颜色 | `String` | `#38f` | hexvalue |
+| text-color | 进度条文字颜色 | `String` | `#fff` | hexvalue |
 
 ----------
 
@@ -654,11 +708,11 @@ bgColor、tabColor 值均以 vonic 情景色表示。
 ##### 用法
 
 ```html
-<swiper ref="swiper" 
-  direction="horizontal" 
-  width="100%" 
-  height="150" 
-  pager-color="#ea5a49" 
+<swiper ref="swiper"
+  direction="horizontal"
+  width="100%"
+  height="150"
+  pager-color="#ea5a49"
   pager-bg-color="#e5e4e3"
   hide-pager="false"
 >
@@ -964,7 +1018,7 @@ $dialog.alert({
   // 效果
   effect: 'default',
   // 标题
-  title: '提示', 
+  title: '提示',
   // 内容
   content: '这是一个警告框',
   // 按钮文本
@@ -1077,7 +1131,7 @@ options 参数
 
 按模板字符串创建弹层实例
 
-- template 
+- template
 
 模板字符串
 
@@ -1105,11 +1159,11 @@ options 参数
 
 ##### Popup 实例方法
 
-###### show() 
+###### show()
 
 显示弹层，返回一个在点击关闭后resolve 的 Promise
 
-###### hide() 
+###### hide()
 
 关闭弹层
 
@@ -1139,7 +1193,7 @@ $actionSheet.show({
 })
 ```
 
-##### 方法 
+##### 方法
 
 ###### show(options: Object)
 
@@ -1217,8 +1271,8 @@ $actionSheet.show({
 
 ```js
   let routes = [
-    { 
-      path: '/', 
+    {
+      path: '/',
       component: Index,
       children: [
         { path: 'home', component: Home },
@@ -1354,7 +1408,7 @@ $tabbar.$emit('updateTabbarBadge', 1, 5)
 
 - contentComponent 需要加载到modal中的内容组件
 
-- options 
+- options
 
 | 字段名 | 描述 | 类型 | 必选 | 默认值 |
 |-----|-----|-----|-----|-----|
@@ -1388,7 +1442,7 @@ contentComponent 对应的 Vue 实例
 ###### setTitle(title: String)
 
 设置当前导航栏标题文字
-  
+
 ----------
 
 ### 其他
