@@ -26,7 +26,7 @@
           return this.percentage + '%';
         }
       },
-      color: {
+      color: { // 进度条颜色
         type: String,
         default: '#38f'
       },

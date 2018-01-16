@@ -4,25 +4,25 @@
     <div>
       <h2 class="demo-block__title">基本用法</h2>
 
-      <VUProgress :percentage="0" />
-      <VUProgress :percentage="46" />
-      <VUProgress :percentage="100" />
+      <VuProgress :percentage="0" />
+      <VuProgress :percentage="46" />
+      <VuProgress :percentage="100" />
     </div>
 
     <div>
       <h2 class="demo-block__title">进度条置灰</h2>
 
-      <VUProgress inactive :percentage="0" />
-      <VUProgress inactive :percentage="46" />
-      <VUProgress inactive :percentage="100" />
+      <VuProgress inactive :percentage="0" />
+      <VuProgress inactive :percentage="46" />
+      <VuProgress inactive :percentage="100" />
     </div>
 
     <div>
       <h2 class="demo-block__title">样式定制</h2>
 
-      <VUProgress pivot-text="红色" color="#ed5050" :percentage="26" />
-      <VUProgress pivot-text="橙色" color="#f60" :percentage="46" />
-      <VUProgress pivot-text="黄色" color="#f09000" :percentage="66" />
+      <VuProgress pivot-text="红色" color="#ed5050" :percentage="26" />
+      <VuProgress pivot-text="橙色" color="#f60" :percentage="46" />
+      <VuProgress pivot-text="黄色" color="#f09000" :percentage="66" />
     </div>
   </div>
 </template>
@@ -42,7 +42,7 @@
   };
 </script>
 
-<style lang="postcss">
+<style lang="scss" scoped>
   .demo-progress {
 
     .vu-progress {
