@@ -1,6 +1,6 @@
 import Progress from 'packages/progress';
 import { mount } from 'avoriaz';
-
+/*eslint-disable*/
 describe('Progress', () => {
   let wrapper;
   let bar;
