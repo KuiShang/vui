@@ -5,7 +5,7 @@
       <vu-button type="primary">{{ 'primary' }}</vu-button>
       <vu-button type="danger">{{ 'danger' }}</vu-button>
     </div>
-    
+
     <div >
       <vu-button size="large">{{ 'large' }}</vu-button>
       <vu-button size="normal">{{ 'normal' }}</vu-button>

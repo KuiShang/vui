@@ -58,4 +58,22 @@ export default {
   box-sizing: border-box;
 
 }
+  .demo-section__title {
+    margin: 0;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: left;
+  }
+
+  .demo-block__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(69, 90, 100, .6);
+    padding: 0 15px 10px;
+    text-align: left;
+  }
 </style>

@@ -5,5 +5,6 @@
     "swipe-item": "./packages/swipe-item/index.js",
     "swipe": "./packages/swipe/index.js",
     "loading": "./packages/loading/index.js",
-    "button": "./packages/button/index.js"
+    "button": "./packages/button/index.js",
+    "progress": "./packages/progress/index.js"
 }

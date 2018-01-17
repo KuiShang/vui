@@ -7,6 +7,7 @@ import SwipeItem from '../packages/swipe-item/index.js'
 import Swipe from '../packages/swipe/index.js'
 import Loading from '../packages/loading/index.js'
 import Button from '../packages/button/index.js'
+import Progress from '../packages/progress/index.js'
 
 const components = [
   Checkbox,
@@ -15,7 +16,8 @@ const components = [
   SwipeItem,
   Swipe,
   Loading,
-  Button
+  Button,
+  Progress
 ]
 
 const install = (Vue, opts = {}) => {
@@ -38,7 +40,8 @@ const vui = {
   SwipeItem,
   Swipe,
   Loading,
-  Button
+  Button,
+  Progress
 }
 
 export default vui
