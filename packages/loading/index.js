@@ -1,8 +1,8 @@
-import VULoading from './src/loading'
+import VuLoading from './src/loading'
 
 /* istanbul ignore next */
-VULoading.install = Vue => {
-  Vue.component(VULoading.name, VULoading)
+VuLoading.install = Vue => {
+  Vue.component(VuLoading.name, VuLoading)
 }
 
-export default VULoading
+export default VuLoading
