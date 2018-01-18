@@ -30,6 +30,11 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'cell'}">
+           <span class="item-note">Cell单元格</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+        
         <router-link tag="li" class="item-icon-right" :to="{ name: 'progress'}">
           <span class="item-note">progress</span>
           <i class="icon ion-ios-arrow-right"></i>

@@ -1,10 +1,12 @@
 {
-    "checkbox": "./packages/checkbox/index.js",
-    "checkbox-group": "./packages/checkbox-group/index.js",
-    "icon-button": "./packages/icon-button/index.js",
-    "swipe-item": "./packages/swipe-item/index.js",
-    "swipe": "./packages/swipe/index.js",
-    "loading": "./packages/loading/index.js",
-    "button": "./packages/button/index.js",
-    "progress": "./packages/progress/index.js"
+	"checkbox": "./packages/checkbox/index.js",
+	"checkbox-group": "./packages/checkbox-group/index.js",
+	"icon-button": "./packages/icon-button/index.js",
+	"swipe-item": "./packages/swipe-item/index.js",
+	"swipe": "./packages/swipe/index.js",
+	"loading": "./packages/loading/index.js",
+	"button": "./packages/button/index.js",
+	"progress": "./packages/progress/index.js",
+	"cell": "./packages/cell/index.js",
+	"cell-group": "./packages/cell-group/index.js"
 }
