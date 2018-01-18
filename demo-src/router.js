@@ -6,6 +6,7 @@ import iconbutton from './components/iconButton'
 import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
+import cell from './components/cell'
 import progress from './components/progress'
 
 Vue.use(Router)
@@ -17,32 +18,31 @@ const routes = [{
   path: '/checkbox',
   name: 'checkbox',
   component: checkbox
-},
-{
+}, {
   path: '/iconbutton',
   name: 'iconbutton',
   component: iconbutton
-},
-{
+}, {
   path: '/swiper',
   name: 'swiper',
   component: swiper
-},
-{
+}, {
   path: '/loading',
   name: 'loading',
   component: loading
-},
-{
+}, {
   path: '/button',
   name: 'button',
   component: button
-},
-  {
-    path: '/progress',
-    name: 'progress',
-    component: progress
-  }]
+}, {
+  path: '/cell',
+  name: 'cell',
+  component: cell
+}, {
+  path: '/progress',
+  name: 'progress',
+  component: progress
+}]
 export default new Router({
   routes: routes
 })
