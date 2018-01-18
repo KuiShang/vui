@@ -41,7 +41,7 @@
 import RouterLink from '../../theme-chalk/scripts/router-link';
 
 export default ({
-  name: 'vuCell',
+  name: 'VuCell',
   mixins: [RouterLink],
   
   props: {

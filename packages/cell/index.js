@@ -1,8 +1,8 @@
-import VUCell from './src/cell'
+import VuCell from './src/cell'
 
 /* istanbul ignore next */
-VUCell.install = Vue => {
-	Vue.component(VUCell.name, VUCell)
+VuCell.install = Vue => {
+	Vue.component(VuCell.name, VuCell)
 }
 
-export default VUCell
+export default VuCell
