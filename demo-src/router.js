@@ -7,6 +7,7 @@ import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
 import progress from './components/progress'
+import Switch from './components/switch'
 
 Vue.use(Router)
 const routes = [{
@@ -38,11 +39,16 @@ const routes = [{
   name: 'button',
   component: button
 },
-  {
-    path: '/progress',
-    name: 'progress',
-    component: progress
-  }]
+{
+  path: '/progress',
+  name: 'progress',
+  component: progress
+},
+{
+  path: '/switch',
+  name: 'switch',
+  component: Switch
+}]
 export default new Router({
   routes: routes
 })

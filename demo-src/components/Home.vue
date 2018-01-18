@@ -35,6 +35,11 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'switch'}">
+          <span class="item-note">switch</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
 
 
         <li class="item-icon-right" @click.native="$router.forward('/basic/mdButton')">

@@ -6,5 +6,6 @@
     "swipe": "./packages/swipe/index.js",
     "loading": "./packages/loading/index.js",
     "button": "./packages/button/index.js",
-    "progress": "./packages/progress/index.js"
+    "progress": "./packages/progress/index.js",
+    "switch": "./packages/switch/index.js"
 }
