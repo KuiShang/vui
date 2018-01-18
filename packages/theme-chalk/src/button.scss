@@ -70,9 +70,11 @@
       }
 
       @include m(loading) {
+        
           @include e(text) {
             display: none;
           }
+      
       }
 
       @include m(mini) {
@@ -81,7 +83,6 @@
         height: 22px;
         line-height: 20px;
         font-size: 10px;
-        
         & + .vu-button--mini {
             margin-left: 5px;
         }

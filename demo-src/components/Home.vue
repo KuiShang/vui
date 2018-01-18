@@ -30,6 +30,11 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'cell'}">
+           <span class="item-note">Cell单元格</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+        
         <router-link tag="li" class="item-icon-right" :to="{ name: 'progress'}">
           <span class="item-note">progress</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -46,10 +51,10 @@
           MdButton <span class="item-note">Material Design 风格</span>
           <i class="icon ion-ios-arrow-right"></i>
         </li>
-        <li class="item-icon-right" @click.native="$router.forward('/basic/input')">
-          Input <span class="item-note">输入框</span>
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'field'}">
+          Field <span class="item-note">输入框</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
+        </router-link>
         <li class="item-icon-right" @click.native="$router.forward('/basic/search')">
           Search <span class="item-note">搜索框</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -96,10 +101,10 @@
           List <span class="item-note">列表</span>
           <i class="icon ion-ios-arrow-right"></i>
         </li>
-        <li class="item-icon-right" @click.native="$router.forward('/layout/cells')">
-          Cells <span class="item-note">宫格</span>
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'cell'}">
+          Cell <span class="item-note">单元格</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
+        </router-link>
         <li class="item-icon-right" @click.native="$router.forward('/layout/tabs')">
           Tabs <span class="item-note">选项卡</span>
           <i class="icon ion-ios-arrow-right"></i>

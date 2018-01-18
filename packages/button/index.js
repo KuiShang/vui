@@ -1,8 +1,8 @@
-import VUButton from './src/button'
+import VuButton from './src/button'
 
 /* istanbul ignore next */
-VUButton.install = Vue => {
-  Vue.component(VUButton.name, VUButton)
+VuButton.install = Vue => {
+  Vue.component(VuButton.name, VuButton)
 }
 
-export default VUButton
+export default VuButton

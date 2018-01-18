@@ -1,8 +1,8 @@
-import VUSwipeItem from './src/swipe-item'
+import VuSwipeItem from './src/swipe-item'
 
 /* istanbul ignore next */
-VUSwipeItem.install = Vue => {
-  Vue.component(VUSwipeItem.name, VUSwipeItem)
+VuSwipeItem.install = Vue => {
+  Vue.component(VuSwipeItem.name, VuSwipeItem)
 }
 
-export default VUSwipeItem
+export default VuSwipeItem

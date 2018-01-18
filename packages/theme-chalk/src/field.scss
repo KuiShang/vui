@@ -1,0 +1,106 @@
+@import './common/var.scss';
+
+@include b(field) {
+  width: 100%;
+
+  .vu-cell__title {
+    width: 90px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+
+  .vu-cell__value {
+    width: 100%;
+    padding-left: 90px;
+  }
+
+  @include e(error-message) {
+    color: $red;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  @include m(has-textarea) {
+    .van-field__control {
+      min-height: 60px;
+    }
+  }
+
+  @include m(nolabel) {
+    .van-cell__title {
+      display: none;
+    }
+
+    .vu-cell__value {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  @include m(disabled) {
+    .van-field__control {
+      color: $gray-dark;
+    }
+  }
+
+  @include m(error) {
+    .van-field__control {
+      &,
+      &::placeholder {
+        color: $red;
+      }
+    }
+  }
+
+  @include m(border) {
+    .van-field__control {
+      padding-left: 10px;
+    }
+
+    &::after {
+      border-radius: 2px;
+    }
+  }
+
+  @include m(autosize) {
+    .van-field__control {
+      min-height: 0;
+    }
+  }
+
+  @include m(has-icon) {
+    .van-field__control {
+      width: 90%;
+    }
+  }
+
+  @include e(control) {
+    border: 0;
+    font-size: 14px;
+    line-height: 24px;
+    height: 24px;
+    padding: 0;
+    display: block;
+    width: 100%;
+    resize: none;
+
+    &[disabled] {
+      background-color: transparent;
+    }
+  }
+
+  @include e(icon) {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    padding: 10px;
+
+    .vui-icon {
+      display: block;
+      font-size:inherit !important;
+      color: #333;
+    }
+  }
+}

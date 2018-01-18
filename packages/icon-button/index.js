@@ -1,8 +1,8 @@
-import VUIconButton from './src/icon-button'
+import VuIconButton from './src/icon-button'
 
 /* istanbul ignore next */
-VUIconButton.install = Vue => {
-  Vue.component(VUIconButton.name, VUIconButton)
+VuIconButton.install = Vue => {
+  Vue.component(VuIconButton.name, VuIconButton)
 }
 
-export default VUIconButton
+export default VuIconButton
