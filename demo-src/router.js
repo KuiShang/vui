@@ -8,6 +8,8 @@ import loading from './components/loading'
 import button from './components/button'
 import cell from './components/cell'
 import progress from './components/progress'
+import field from './components/field'
+import cell from './components/cell'
 
 Vue.use(Router)
 const routes = [{
@@ -34,14 +36,21 @@ const routes = [{
   path: '/button',
   name: 'button',
   component: button
-}, {
-  path: '/cell',
-  name: 'cell',
-  component: cell
-}, {
+},
+{
   path: '/progress',
   name: 'progress',
   component: progress
+},
+{
+  path: '/field',
+  name: 'field',
+  component: field
+},
+{
+  path: '/cell',
+  name: 'cell',
+  component: cell
 }]
 export default new Router({
   routes: routes

@@ -10,7 +10,7 @@ import Button from '../packages/button/index.js'
 import Progress from '../packages/progress/index.js'
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
-
+import Field from '../packages/field/index.js'
 const components = [
   Checkbox,
   CheckboxGroup,
@@ -21,7 +21,8 @@ const components = [
   Button,
   Progress,
   Cell,
-  CellGroup
+  CellGroup,
+  Field
 ]
 
 const install = (Vue, opts = {}) => {
@@ -47,7 +48,8 @@ const vui = {
   Button,
   Progress,
   Cell,
-  CellGroup
+  CellGroup,
+  Field
 }
 
 export default vui

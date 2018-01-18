@@ -73,7 +73,6 @@
     }
   }
 
-
   @include m(clickable) {
     &:active {
       background-color: $active-color;
