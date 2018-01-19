@@ -7,6 +7,7 @@ import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
 import progress from './components/progress'
+import navBar from './components/navBar'
 
 Vue.use(Router)
 const routes = [{
@@ -42,6 +43,11 @@ const routes = [{
     path: '/progress',
     name: 'progress',
     component: progress
+  },
+  {
+    path: '/navBar',
+    name: 'navBar',
+    component: navBar
   }]
 export default new Router({
   routes: routes

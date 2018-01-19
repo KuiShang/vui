@@ -31,7 +31,12 @@
         </router-link>
 
         <router-link tag="li" class="item-icon-right" :to="{ name: 'progress'}">
-          <span class="item-note">progress</span>
+          <span class="item-note">progress进度条</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'navBar'}">
+          <span class="item-note">navBar导航条</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 

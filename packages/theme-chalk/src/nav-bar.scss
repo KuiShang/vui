@@ -1,0 +1,63 @@
+@import './common/var.scss';
+@import "./mixins/mixins";
+
+@include b(nav-bar) {
+  height: 46px;
+  position: relative;
+  user-select: none;
+  text-align: center;
+  line-height: 46px;
+  background-color: $white;
+
+  .vu-icon {
+    color: $blue;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  @include e(arrow) {
+    transform: rotate(180deg);
+
+    + .vu-nav-bar__text {
+      margin-left: -20px;
+      padding-left: 25px;
+    }
+  }
+
+  @include m(fixed) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+  }
+
+  @include e(title) {
+    font-size: 16px;
+  }
+
+  @include e((left, right)) {
+    bottom: 0;
+    font-size: 14px;
+    position: absolute;
+  }
+
+  @include e(left) {
+    left: 15px;
+  }
+
+  @include e(right) {
+    right: 15px;
+  }
+
+  @include e(text) {
+    color: $blue;
+    margin: 0 -15px;
+    padding: 0 15px;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:active {
+      background-color: $active-color;
+    }
+  }
+}

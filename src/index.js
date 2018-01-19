@@ -8,6 +8,7 @@ import Swipe from '../packages/swipe/index.js'
 import Loading from '../packages/loading/index.js'
 import Button from '../packages/button/index.js'
 import Progress from '../packages/progress/index.js'
+import NavBar from '../packages/nav-bar/index.js'
 
 const components = [
   Checkbox,
@@ -17,7 +18,8 @@ const components = [
   Swipe,
   Loading,
   Button,
-  Progress
+  Progress,
+  NavBar
 ]
 
 const install = (Vue, opts = {}) => {
@@ -41,7 +43,8 @@ const vui = {
   Swipe,
   Loading,
   Button,
-  Progress
+  Progress,
+  NavBar
 }
 
 export default vui
