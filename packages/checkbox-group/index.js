@@ -1,8 +1,8 @@
-import VUCheckboxGroup from './src/checkbox-group'
+import VuCheckboxGroup from './src/checkbox-group'
 
 /* istanbul ignore next */
-VUCheckboxGroup.install = Vue => {
-  Vue.component(VUCheckboxGroup.name, VUCheckboxGroup)
+VuCheckboxGroup.install = Vue => {
+  Vue.component(VuCheckboxGroup.name, VuCheckboxGroup)
 }
 
-export default VUCheckboxGroup
+export default VuCheckboxGroup

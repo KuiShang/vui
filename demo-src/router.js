@@ -7,6 +7,8 @@ import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
 import progress from './components/progress'
+import field from './components/field'
+import cell from './components/cell'
 import navBar from './components/navBar'
 
 Vue.use(Router)
@@ -18,37 +20,45 @@ const routes = [{
   path: '/checkbox',
   name: 'checkbox',
   component: checkbox
-},
-{
+}, {
   path: '/iconbutton',
   name: 'iconbutton',
   component: iconbutton
-},
-{
+}, {
   path: '/swiper',
   name: 'swiper',
   component: swiper
-},
-{
+}, {
   path: '/loading',
   name: 'loading',
   component: loading
-},
-{
+}, {
   path: '/button',
   name: 'button',
   component: button
 },
-  {
-    path: '/progress',
-    name: 'progress',
-    component: progress
-  },
+{
+  path: '/progress',
+  name: 'progress',
+  component: progress
+},
+{
+  path: '/field',
+  name: 'field',
+  component: field
+},
+{
+  path: '/cell',
+  name: 'cell',
+  component: cell
+},
   {
     path: '/navBar',
     name: 'navBar',
     component: navBar
-  }]
+  }];
+
+
 export default new Router({
   routes: routes
 })
