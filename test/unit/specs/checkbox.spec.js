@@ -167,13 +167,13 @@ describe('Checkbox', () => {
     })
 
     expect(wrapper.hasClass('vu-checkbox')).to.be.true
-    expect(wrapper.hasClass('is--disabled')).to.be.true
+    expect(wrapper.hasClass('is-disabled')).to.be.true
     expect(wrapper.vm.currentValue).to.be.false
     expect(wrapper.vm.isDisabled).to.be.true
 
     const checkboxLabel = wrapper.find('.vu-checkbox__label')[0]
     checkboxLabel.trigger('click')
-
+    wrapper.update()
     expect(wrapper.vm.currentValue).to.be.false
   })
 })
