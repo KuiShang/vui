@@ -11,6 +11,8 @@ import Switch from './components/switch'
 import field from './components/field'
 import cell from './components/cell'
 import navBar from './components/navBar'
+import loadmore from './components/loadmore'
+import list from './components/list'
 
 Vue.use(Router)
 const routes = [{
@@ -58,12 +60,21 @@ const routes = [{
   name: 'cell',
   component: cell
 },
-  {
-    path: '/navBar',
-    name: 'navBar',
-    component: navBar
-  }];
-
+{
+  path: '/navBar',
+  name: 'navBar',
+  component: navBar
+},
+{
+  path: '/loadmore',
+  name: 'loadmore',
+  component: loadmore
+},
+{
+  path: '/list',
+  name: 'list',
+  component: list
+}]
 
 export default new Router({
   routes: routes

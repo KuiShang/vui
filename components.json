@@ -10,6 +10,7 @@
     "switch": "./packages/switch/index.js",
 	"cell": "./packages/cell/index.js",
 	"cell-group": "./packages/cell-group/index.js",
-  	"nav-bar": "./packages/nav-bar/index.js"
+    "nav-bar": "./packages/nav-bar/index.js",
+    "loadmore": "./packages/loadmore/index.js",
+    "list": "./packages/list/index.js"
 }
-
