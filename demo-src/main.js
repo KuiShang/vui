@@ -6,7 +6,10 @@ import router from './router'
 import './assets/normalize.css'
 import vui from '../src/index.js'
 import '../packages/theme-chalk/src/index.scss'
-Vue.use(vui)
+Vue.use(vui);
+
+// window.VuToast = vui.Toast;
+
 /*eslint-disable */
 let s = new Vue({
   el: '#app',

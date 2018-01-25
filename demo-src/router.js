@@ -12,6 +12,7 @@ import field from './components/field'
 import cell from './components/cell'
 import navBar from './components/navBar'
 import imagePreview from './components/image-preview'
+import toast from './components/toast'
 
 Vue.use(Router)
 const routes = [{
@@ -68,7 +69,12 @@ const routes = [{
   path: '/imagePreview',
   name: 'imagePreview',
   component: imagePreview
-}]
+},
+  {
+    path: '/toast',
+    name: 'toast',
+    component: toast
+  }]
 
 export default new Router({
   routes: routes
