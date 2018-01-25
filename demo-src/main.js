@@ -14,4 +14,3 @@ let s = new Vue({
   template: '<app/>',
   components: { app }
 })
-console.log(s)

@@ -11,6 +11,7 @@
 	"cell": "./packages/cell/index.js",
 	"cell-group": "./packages/cell-group/index.js",
     "nav-bar": "./packages/nav-bar/index.js",
-    "image-preview": "./packages/image-preview/index.js"
+    "image-preview": "./packages/image-preview/index.js",
+    "popup": "./packages/popup/index.js"
 }
 

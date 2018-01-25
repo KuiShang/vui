@@ -57,8 +57,25 @@ export default {
   }
 }
 .vu-image-preview {
+    width: 320px;
+    height: 568px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 85px;
+    left: 75px;
+    overflow: hidden;
   img {
     pointer-events: none;
   }
+}
+
+.vu-modal {
+    width: 320px;
+    height: 568px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 85px;
+    left: 75px;
+    overflow: hidden;
 }
 </style>

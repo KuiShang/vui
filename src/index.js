@@ -13,6 +13,7 @@ import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
 import NavBar from '../packages/nav-bar/index.js'
 import ImagePreview from '../packages/image-preview/index.js'
+import Popup from '../packages/popup/index.js'
 
 const components = [
   Checkbox,
@@ -27,7 +28,8 @@ const components = [
   Cell,
   CellGroup,
   NavBar,
-  ImagePreview
+  ImagePreview,
+  Popup
 ]
 
 const install = (Vue, opts = {}) => {
@@ -56,7 +58,8 @@ const vui = {
   Cell,
   CellGroup,
   NavBar,
-  ImagePreview
+  ImagePreview,
+  Popup
 }
 
 export default vui
