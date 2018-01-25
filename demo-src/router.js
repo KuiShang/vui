@@ -6,10 +6,10 @@ import iconbutton from './components/iconButton'
 import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
-import cell from './components/cell'
 import progress from './components/progress'
 import field from './components/field'
 import cell from './components/cell'
+import navBar from './components/navBar'
 
 Vue.use(Router)
 const routes = [{
@@ -51,7 +51,14 @@ const routes = [{
   path: '/cell',
   name: 'cell',
   component: cell
-}]
+},
+  {
+    path: '/navBar',
+    name: 'navBar',
+    component: navBar
+  }];
+
+
 export default new Router({
   routes: routes
 })

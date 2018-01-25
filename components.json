@@ -8,5 +8,7 @@
 	"button": "./packages/button/index.js",
 	"progress": "./packages/progress/index.js",
 	"cell": "./packages/cell/index.js",
-	"cell-group": "./packages/cell-group/index.js"
+	"cell-group": "./packages/cell-group/index.js",
+  "nav-bar": "./packages/nav-bar/index.js"
 }
+
