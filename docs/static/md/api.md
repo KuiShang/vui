@@ -105,31 +105,31 @@ Vue.use(CellGroup);
 
 ###### 基础用法
 
-将`van-cell-group`组件看成一个容器即可
+将`vu-cell-group`组件看成一个容器即可
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" value="内容" />
-  <van-cell title="单元格" value="内容" label="描述信息" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" value="内容" />
+  <vu-cell title="单元格" value="内容" label="描述信息" />
+</vu-cell-group>
 ```
 
 ###### 只设置value
 只设置`value`时会向左对齐
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell value="内容" />
+</vu-cell-group>
 ```
 
 ###### 展示图标
 通过`icon`属性在标题左侧展示图标
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" icon="location" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" icon="location" />
+</vu-cell-group>
 ```
 
 
@@ -137,28 +137,28 @@ Vue.use(CellGroup);
 传入`is-link`属性则会在右侧显示箭头
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" is-link />
-  <van-cell title="单元格" is-link value="内容" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" is-link />
+  <vu-cell title="单元格" is-link value="内容" />
+</vu-cell-group>
 ```
 
 ###### 高级用法
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" icon="shop" is-link>
+<vu-cell-group>
+  <vu-cell value="内容" icon="shop" is-link>
     <template slot="title">
-      <span class="van-cell-text">单元格</span>
-      <van-tag type="danger">标签</van-tag>
+      <span class="vu-cell-text">单元格</span>
+      <vu-tag type="danger">标签</vu-tag>
     </template>
-  </van-cell>
-  <van-cell title="单元格" icon="location" is-link />
-  <van-cell title="单元格">
-    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
-  </van-cell>
-</van-cell-group>
+  </vu-cell>
+  <vu-cell title="单元格" icon="location" is-link />
+  <vu-cell title="单元格">
+    <vu-icon slot="right-icon" name="search" class="vu-cell__right-icon" />
+  </vu-cell>
+</vu-cell-group>
 ```
 
 #### CellGroup API
@@ -364,7 +364,7 @@ Vue.use(Progress);
 
 #### 使用指南
 ``` javascript
-import { Field } from 'vant';
+import { Field } from 'vui';
 
 Vue.use(Field);
 ```
@@ -483,7 +483,7 @@ Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 
 #### 使用指南
 ``` javascript
-import { Cell, CellGroup } from 'vant';
+import { Cell, CellGroup } from 'vui';
 
 Vue.use(Cell);
 Vue.use(CellGroup);
@@ -585,7 +585,7 @@ Vue.use(CellGroup);
 
 #### 使用指南
 ``` javascript
-import { NavBar } from 'vant';
+import { NavBar } from 'vui';
 
 Vue.use(NavBar);
 ```
@@ -595,7 +595,7 @@ Vue.use(NavBar);
 ##### 基础用法
 
 ```html
-<van-nav-bar
+<vu-nav-bar
   title="标题"
   left-text="返回"
   right-text="按钮"
@@ -622,9 +622,9 @@ export default {
 通过 slot 定制内容
 
 ```html
-<van-nav-bar title="标题" left-text="返回" left-arrow>
-  <van-icon name="search" slot="right" />
-</van-nav-bar>
+<vu-nav-bar title="标题" left-text="返回" left-arrow>
+  <vu-icon name="search" slot="right" />
+</vu-nav-bar>
 ```
 
 
@@ -673,23 +673,23 @@ Vue.use(SwipeItem);
 通过`autoplay`属性设置自动轮播间隔
 
 ```html
-<van-swipe :autoplay="3000">
-  <van-swipe-item>1</van-swipe-item>
-  <van-swipe-item>2</van-swipe-item>
-  <van-swipe-item>3</van-swipe-item>
-  <van-swipe-item>4</van-swipe-item>
-</van-swipe>
+<vu-swipe :autoplay="3000">
+  <vu-swipe-item>1</vu-swipe-item>
+  <vu-swipe-item>2</vu-swipe-item>
+  <vu-swipe-item>3</vu-swipe-item>
+  <vu-swipe-item>4</vu-swipe-item>
+</vu-swipe>
 ```
 
 ##### 图片懒加载
 配合 [Lazyload](#/zh-CN/component/lazyload) 组件实现图片懒加载
 
 ```html
-<van-swipe :autoplay="3000">
-  <van-swipe-item v-for="(image, index) in images" :key="index">
+<vu-swipe :autoplay="3000">
+  <vu-swipe-item v-for="(image, index) in images" :key="index">
     <img v-lazy="image" />
-  </van-swipe-item>
-</van-swipe>
+  </vu-swipe-item>
+</vu-swipe>
 ```
 
 ```javascript
@@ -725,7 +725,7 @@ export default {
 #### 使用指南
 
 ```javascript
-import { Toast } from 'vant';
+import { Toast } from 'vui';
 ```
 
 #### 代码演示

@@ -1,4 +1,4 @@
-import Toast from 'packages/toast/src/';
+import Toast from 'packages/toast';
 
 describe('Toast', () => {
   afterEach(() => {
