@@ -100,10 +100,10 @@
           Cell <span class="item-note">单元格</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
-        <li class="item-icon-right" @click.native="$router.forward('/layout/tabs')">
-          Tabs <span class="item-note">选项卡</span>
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'tab'}">
+          Tab <span class="item-note">标签页</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
+        </router-link>
         <li class="item-icon-right" @click.native="$router.forward('/layout/buttonbar')">
           ButtonBar <span class="item-note">iOS 选项卡</span>
           <i class="icon ion-ios-arrow-right"></i>
