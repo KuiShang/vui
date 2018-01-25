@@ -11,8 +11,8 @@ import Progress from '../packages/progress/index.js'
 import Switch from '../packages/switch/index.js'
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
-import Field from '../packages/field/index.js'
 import NavBar from '../packages/nav-bar/index.js'
+import ImagePreview from '../packages/image-preview/index.js'
 
 const components = [
   Checkbox,
@@ -26,8 +26,8 @@ const components = [
   Switch,
   Cell,
   CellGroup,
-  Field,
-  NavBar
+  NavBar,
+  ImagePreview
 ]
 
 const install = (Vue, opts = {}) => {
@@ -55,8 +55,8 @@ const vui = {
   Switch,
   Cell,
   CellGroup,
-  Field,
-  NavBar
+  NavBar,
+  ImagePreview
 }
 
 export default vui
