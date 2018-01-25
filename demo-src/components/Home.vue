@@ -34,7 +34,7 @@
            <span class="item-note">Cell单元格</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
-        
+
         <router-link tag="li" class="item-icon-right" :to="{ name: 'progress'}">
           <span class="item-note">progress进度条</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -42,6 +42,11 @@
 
         <router-link tag="li" class="item-icon-right" :to="{ name: 'navBar'}">
           <span class="item-note">navBar导航条</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'toast'}">
+          <span class="item-note">toast轻提示</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 

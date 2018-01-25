@@ -1,0 +1,66 @@
+@import './common/var.scss';
+
+@include b(toast) {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  color: $white;
+  z-index: 3001;
+  font-size: 12px;
+  line-height: 1.2;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: rgba(39, 39, 39, .7);
+
+ @include e(overlay) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    background-color: transparent;
+
+   @include e(mask) {
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+
+  @include e(text) {
+    padding: 12px;
+    min-width: 220px;
+  }
+
+  @include e(default) {
+    width: 120px;
+    min-height: 120px;
+    padding: 15px;
+
+    @include m(icon) {
+      font-size: 50px;
+    }
+
+    .vu-loading {
+      margin: 10px 0 5px;
+    }
+
+    @include m(text) {
+      font-size: 14px;
+      padding-top: 10px;
+    }
+  }
+
+  @include e(top) {
+    top: 50px;
+  }
+
+  @include e(bottom) {
+    top: auto;
+    bottom: 50px;
+  }
+}

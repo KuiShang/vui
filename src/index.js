@@ -10,8 +10,8 @@ import Button from '../packages/button/index.js'
 import Progress from '../packages/progress/index.js'
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
-import Field from '../packages/field/index.js'
 import NavBar from '../packages/nav-bar/index.js'
+import Toast from '../packages/toast/index.js'
 
 const components = [
   Checkbox,
@@ -24,8 +24,8 @@ const components = [
   Progress,
   Cell,
   CellGroup,
-  Field,
-  NavBar
+  NavBar,
+  Toast
 ]
 
 const install = (Vue, opts = {}) => {
@@ -52,8 +52,8 @@ const vui = {
   Progress,
   Cell,
   CellGroup,
-  Field,
-  NavBar
+  NavBar,
+  Toast
 }
 
 export default vui

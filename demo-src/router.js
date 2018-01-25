@@ -10,6 +10,8 @@ import progress from './components/progress'
 import field from './components/field'
 import cell from './components/cell'
 import navBar from './components/navBar'
+import toast from './components/toast'
+
 
 Vue.use(Router)
 const routes = [{
@@ -56,6 +58,11 @@ const routes = [{
     path: '/navBar',
     name: 'navBar',
     component: navBar
+  },
+  {
+    path: '/toast',
+    name: 'toast',
+    component: toast
   }];
 
 
