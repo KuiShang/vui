@@ -1,19 +1,24 @@
 <template>
   <div>
-    <div :title="title1">
+    <h1 class="demo-section__title">Toast轻提示</h1>
+    <div>
+      <h2 class="demo-block__title">{{ title1 }}</h2>
       <vu-button @click="showToast">{{ title1 }}</vu-button>
     </div>
 
-    <div :title="title2">
+    <div>
+      <h2 class="demo-block__title">{{ title2 }}</h2>
       <vu-button @click="showLoadingToast">{{ title2 }}</vu-button>
     </div>
 
-    <div :title="title3">
+    <div>
+      <h2 class="demo-block__title">{{ title3 }}</h2>
       <vu-button @click="showSuccessToast">{{ success }}</vu-button>
       <vu-button @click="showFailToast">{{ fail }}</vu-button>
     </div>
 
-    <div :title="advancedUsage">
+    <div>
+      <h2 class="demo-block__title">{{ advancedUsage }}</h2>
       <vu-button @click="showCustomizedToast">{{ advancedUsage }}</vu-button>
     </div>
   </div>
@@ -77,9 +82,9 @@
 </script>
 
 <style lang="postcss">
-  .demo-toast {
+  /*.demo-toast {*/
   .vu-button {
     margin-left: 15px;
   }
-  }
+  /*}*/
 </style>
