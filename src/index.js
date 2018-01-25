@@ -8,14 +8,12 @@ import Swipe from '../packages/swipe/index.js'
 import Loading from '../packages/loading/index.js'
 import Button from '../packages/button/index.js'
 import Progress from '../packages/progress/index.js'
-<<<<<<< HEAD
 import Switch from '../packages/switch/index.js'
-
-=======
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
 import Field from '../packages/field/index.js'
->>>>>>> df9878d14bfb981d728c9171e97a3519714ee4c4
+import NavBar from '../packages/nav-bar/index.js'
+
 const components = [
   Checkbox,
   CheckboxGroup,
@@ -25,13 +23,11 @@ const components = [
   Loading,
   Button,
   Progress,
-<<<<<<< HEAD
-  Switch
-=======
+  Switch,
   Cell,
   CellGroup,
-  Field
->>>>>>> df9878d14bfb981d728c9171e97a3519714ee4c4
+  Field,
+  NavBar
 ]
 
 const install = (Vue, opts = {}) => {
@@ -56,13 +52,11 @@ const vui = {
   Loading,
   Button,
   Progress,
-<<<<<<< HEAD
-  Switch
-=======
+  Switch,
   Cell,
   CellGroup,
-  Field
->>>>>>> df9878d14bfb981d728c9171e97a3519714ee4c4
+  Field,
+  NavBar
 }
 
 export default vui

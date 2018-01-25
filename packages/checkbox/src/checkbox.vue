@@ -12,7 +12,7 @@
         class="vu-checkbox__control"
         :disabled="isDisabled"
       />
-      <i class="vui-icon vui-icon-success custom-vui-icon-success" />
+      <i class="vu-icon vu-icon-success custom-vu-icon-success" />
     </span>
     <span class="vu-checkbox__label" @click="onClickLabel">
       <slot></slot>
@@ -42,7 +42,7 @@ export default {
   computed: {
     // whether is in checkbox-group
     isGroup() {
-      return !!this.findParentByName('VUCheckboxGroup');
+      return !!this.findParentByName('VuCheckboxGroup');
     },
 
     currentValue: {
