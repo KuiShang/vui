@@ -1,17 +1,6 @@
-/* css 相关
-    b  为放到跟布局  并加入组件名称前缀
-    e  为组件内部内层元素 用_链接 分情况放到跟布局下
-    m  为外层传入的可能会修改的 用--链接 直接放到跟布局下
-    when  添加 is- 比如有无边框等。放到跟组件下的is-层级之下
-
-其他配置
-    组件开发中 
-    vui  -> 表示当前根目录
-    @  -> 表示当前根目录下的src目录 */
-
 
 @import './common/var.scss';
-
+@import "./mixins/mixins";
 @include b(cell) {
   width: 100%;
   display: table;

@@ -15,6 +15,7 @@
     "build:demo": "node build/demo.js",
     "test": "karma start test/unit/karma.conf.js --single-run",
     "test:watch": "karma start test/unit/karma.conf.js",
+    "test:single": "node ./test/unit/selector.js",
     "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage"
   },
   "dependencies": {
