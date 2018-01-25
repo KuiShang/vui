@@ -8,10 +8,16 @@ import Swipe from '../packages/swipe/index.js'
 import Loading from '../packages/loading/index.js'
 import Button from '../packages/button/index.js'
 import Progress from '../packages/progress/index.js'
+import Switch from '../packages/switch/index.js'
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
 import NavBar from '../packages/nav-bar/index.js'
+<<<<<<< HEAD
 import Toast from '../packages/toast/index.js'
+=======
+import ImagePreview from '../packages/image-preview/index.js'
+import Popup from '../packages/popup/index.js'
+>>>>>>> 11917964cc5d900913f8b924c2b3f9cc27493e2f
 
 const components = [
   Checkbox,
@@ -22,10 +28,16 @@ const components = [
   Loading,
   Button,
   Progress,
+  Switch,
   Cell,
   CellGroup,
   NavBar,
+<<<<<<< HEAD
   Toast
+=======
+  ImagePreview,
+  Popup
+>>>>>>> 11917964cc5d900913f8b924c2b3f9cc27493e2f
 ]
 
 const install = (Vue, opts = {}) => {
@@ -50,10 +62,16 @@ const vui = {
   Loading,
   Button,
   Progress,
+  Switch,
   Cell,
   CellGroup,
   NavBar,
+<<<<<<< HEAD
   Toast
+=======
+  ImagePreview,
+  Popup
+>>>>>>> 11917964cc5d900913f8b924c2b3f9cc27493e2f
 }
 
 export default vui

@@ -7,11 +7,12 @@ import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
 import progress from './components/progress'
+import Switch from './components/switch'
 import field from './components/field'
 import cell from './components/cell'
 import navBar from './components/navBar'
+import imagePreview from './components/image-preview'
 import toast from './components/toast'
-
 
 Vue.use(Router)
 const routes = [{
@@ -45,6 +46,11 @@ const routes = [{
   component: progress
 },
 {
+  path: '/switch',
+  name: 'switch',
+  component: Switch
+},
+{
   path: '/field',
   name: 'field',
   component: field
@@ -54,17 +60,21 @@ const routes = [{
   name: 'cell',
   component: cell
 },
-  {
-    path: '/navBar',
-    name: 'navBar',
-    component: navBar
-  },
+{
+  path: '/navBar',
+  name: 'navBar',
+  component: navBar
+},
+{
+  path: '/imagePreview',
+  name: 'imagePreview',
+  component: imagePreview
+},
   {
     path: '/toast',
     name: 'toast',
     component: toast
-  }];
-
+  }]
 
 export default new Router({
   routes: routes
