@@ -2,10 +2,10 @@ import NavBar from 'packages/nav-bar'
 import { mount } from 'avoriaz'
 import { DOMChecker } from '../utils'
 
-descride('Navbar', () => {
+describe('Navbar', () => {
   let wrapper;
   afterEach(() => {
-    wrapper && wrapper.destory();
+    wrapper && wrapper.destroy();
   });
 
   it('create a NavBar', () => {
