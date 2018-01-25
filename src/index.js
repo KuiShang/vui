@@ -8,6 +8,7 @@ import Swipe from '../packages/swipe/index.js'
 import Loading from '../packages/loading/index.js'
 import Button from '../packages/button/index.js'
 import Progress from '../packages/progress/index.js'
+import Switch from '../packages/switch/index.js'
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
 import Field from '../packages/field/index.js'
@@ -22,6 +23,7 @@ const components = [
   Loading,
   Button,
   Progress,
+  Switch,
   Cell,
   CellGroup,
   Field,
@@ -50,6 +52,7 @@ const vui = {
   Loading,
   Button,
   Progress,
+  Switch,
   Cell,
   CellGroup,
   Field,

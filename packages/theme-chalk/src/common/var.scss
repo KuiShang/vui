@@ -3,6 +3,7 @@ $black: #000;
 $white: #fff;
 $red: #f44;
 $blue: #38f;
+$light-blue: #8bf;
 $orange: #f60;
 $green: #06bf04;
 $gray: #c9c9c9;
@@ -33,3 +34,8 @@ $button-bottom-action-default-color: $white;
 $button-bottom-action-default-background-color: #f85;
 $button-bottom-action-primary-color: $white;
 $button-bottom-action-primary-background-color: $red;
+
+/* animation */
+$animation-time: .3s;
+$transition-time: .2s;
+$ease-in-out: ease-in-out;

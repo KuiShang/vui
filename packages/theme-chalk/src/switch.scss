@@ -1,0 +1,107 @@
+@import './common/var.scss';
+@import "./mixins/mixins";
+@include b(switch) {
+  position: relative;
+  padding: 0;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #ccc;
+  -webkit-appearance: none;
+  vertical-align: middle;
+  user-select: none;
+  overflow: hidden;
+  transition: background-color $transition-time $ease-in-out;
+  
+  @include e(node) {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    transition: left $transition-time $ease-in-out, background-color $transition-time $ease-in-out;
+    background-color: #fff;
+  }
+
+  @include e(inner) {
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    width: 24px;
+    text-align: center;
+    left: 22px;
+    height: 24px;
+    line-height: 24px;
+    span {
+      cursor: default;
+    }
+  }
+
+  @include when(disabled) {
+    background: #f3f3f3;
+    border-color: #f3f3f3;
+    @include e(node) {
+      background-color: $gray;
+    }
+  }
+
+  @include m(checked) {
+    background-color: $blue;
+
+    @include e(node) {
+      left: 26px;
+    }
+
+    @include when(disabled) {
+      background: $light-blue;
+      border-color: $light-blue;
+      @include e(node) {
+        background-color: #fff;
+      }
+    }
+        
+    @include e(inner) {
+      left: 2px;
+    }
+  }
+
+  @include m(default) {
+    width: 48px;
+  }
+
+  @include m(large) {
+    width: 60px;
+    
+    @include e(inner) {
+      width: 36px;
+    }
+  }
+
+  @include m(small) {
+    width: 24px;
+    height: 12px;
+
+    @include e(node) {
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+    }
+  }
+}
+
+.#{$namespace}-switch#{$modifier-separator}checked.#{$namespace}-switch#{$modifier-separator}large {
+  .#{$namespace}-switch#{$element-separator}node {
+    left: 38px;
+  }
+}
+
+.#{$namespace}-switch#{$modifier-separator}checked.#{$namespace}-switch#{$modifier-separator}small {
+  .#{$namespace}-switch#{$element-separator}node {
+    left: 14px;
+  }
+}

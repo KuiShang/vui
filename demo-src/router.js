@@ -7,6 +7,7 @@ import swiper from './components/swiper'
 import loading from './components/loading'
 import button from './components/button'
 import progress from './components/progress'
+import Switch from './components/switch'
 import field from './components/field'
 import cell from './components/cell'
 import navBar from './components/navBar'
@@ -41,6 +42,11 @@ const routes = [{
   path: '/progress',
   name: 'progress',
   component: progress
+},
+{
+  path: '/switch',
+  name: 'switch',
+  component: Switch
 },
 {
   path: '/field',
