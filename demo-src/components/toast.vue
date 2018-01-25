@@ -44,23 +44,23 @@
 
     methods: {
       showToast() {
-        VuToast(this.text1);
+        this.$toast(this.text1);
       },
 
       showLoadingToast() {
-        VuToast.loading({ mask: true });
+        this.$toast.loading({ mask: true });
       },
 
       showSuccessToast() {
-        VuToast.success(this.text2);
+        this.$toast.success(this.text2);
       },
 
       showFailToast() {
-        VuToast.fail(this.text3);
+        this.$toast.fail(this.text3);
       },
 
       showCustomizedToast(duration) {
-        const toast = VuToast.loading({
+        const toast = this.$toast.loading({
           duration: 0,
           forbidClick: true,
           message: this.text4(3)
@@ -73,7 +73,7 @@
             toast.message = this.text4(second);
           } else {
             clearInterval(timer);
-            VuToast.clear();
+            this.$toast.clear();
           }
         }, 1000);
       }

@@ -1,6 +1,6 @@
 @import './common/var.scss';
 
-@include b(toast) {
+.vu-toast {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -17,7 +17,7 @@
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(39, 39, 39, .7);
 
- @include e(overlay) {
+  &__overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -26,22 +26,22 @@
     z-index: 3000;
     background-color: transparent;
 
-   @include e(mask) {
+    &--mask {
       background-color: rgba(0, 0, 0, .5);
     }
   }
 
-  @include e(text) {
+  &--text {
     padding: 12px;
     min-width: 220px;
   }
 
-  @include e(default) {
+  &--default {
     width: 120px;
     min-height: 120px;
     padding: 15px;
 
-    @include m(icon) {
+    .vu-toast__icon {
       font-size: 50px;
     }
 
@@ -49,17 +49,17 @@
       margin: 10px 0 5px;
     }
 
-    @include m(text) {
+    .vu-toast__text {
       font-size: 14px;
       padding-top: 10px;
     }
   }
 
-  @include e(top) {
+  &--top {
     top: 50px;
   }
 
-  @include e(bottom) {
+  &--bottom {
     top: auto;
     bottom: 50px;
   }
