@@ -583,7 +583,81 @@ Vue.use(CellGroup);
 ----------
 ### NavBar 导航栏
 
-## Tabs 标签页
+#### 使用指南
+``` javascript
+import { NavBar } from 'vui';
+
+Vue.use(NavBar);
+```
+
+#### 代码演示
+
+##### 基础用法
+
+```html
+<vu-nav-bar
+  title="标题"
+  left-text="返回"
+  right-text="按钮"
+  left-arrow
+  @click-left="onClickLeft"
+  @click-right="onClickRight"
+/>
+```
+
+```js
+export default {
+  methods: {
+    onClickLeft() {
+      Toast('返回');
+    },
+    onClickRight() {
+      Toast('按钮');
+    }
+  }
+}
+```
+
+##### 高级用法
+通过 slot 定制内容
+
+```html
+<vu-nav-bar title="标题" left-text="返回" left-arrow>
+  <vu-icon name="search" slot="right" />
+</vu-nav-bar>
+```
+
+
+#### API
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | `String` | `''` | - |
+| left-text | 左侧文案 | `String` | `''` | - |
+| right-text | 右侧文案 | `String` | `''` | - |
+| left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
+| left-arrow-size | 左侧箭头图标字体大小 | `String` | `14px, 14rem` | - |
+| fixed | 是否固定在顶部 | `Boolean` | `false` | - |
+| z-index | 元素 z-index | `Number` | `1` | - |
+
+#### Slot
+
+| name | 描述 |
+|-----------|-----------|
+| title | 自定义标题 |
+| left | 自定义左侧区域内容 |
+| right | 自定义右侧区域内容 |
+
+#### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click-left | 点击左侧按钮时触发 | - |
+| click-right | 点击右侧按钮时触发 | - |
+
+----------
+
+
+### Tabs 标签页
 
 ### 使用指南
 ``` javascript
@@ -1003,3 +1077,83 @@ export default {
 | mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
 | forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
 | duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |
+
+### Dialog 弹出框
+
+#### 使用指南
+
+```js
+import { Dialog } from 'vant';
+```
+
+#### 代码演示
+
+##### 消息提示
+用于提示一些消息，只包含一个确认按钮
+
+```javascript
+Dialog.alert({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
+
+Dialog.alert({
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
+```
+
+##### 消息确认
+用于确认消息，包含取消和确认按钮
+
+```javascript
+Dialog.confirm({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on confirm
+}).catch(() => {
+  // on cancel
+});
+```
+
+##### 组件内调用
+引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 $dialog 方法，便于在组件内调用。
+
+```js
+export default {
+  mounted() {
+    this.$dialog.alert({
+      message: '弹窗内容'
+    });
+  }
+}
+```
+
+#### 方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| Dialog.alert | options | `Promise` | 展示消息提示弹窗 |
+| Dialog.confirm | options | `Promise` | 展示消息确认弹窗 |
+| Dialog.close | - | `void` | 关闭弹窗 |
+
+#### Options
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | `String` | - | - |
+| message | 内容 | `String` | - | - |
+| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` | - |
+| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` | - |
+| confirmButtonText | 确认按钮的文案 | `String` |  `确认` | - |
+| cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
+| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
+| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
+| lockOnScroll | 是否禁用背景滚动 | `Boolean` | `true` | - |
+
+
+
