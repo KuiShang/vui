@@ -1,48 +1,50 @@
 <template>
   <div class="demo-cell">
-    <h1>Cell</h1>
+  <h1 class="vu-doc-demo-section-title">Cell</h1>
     <div>
-        <p class="title">基础用法</p>
-        <vu-cell-group>
-          <vu-cell title="单元格" value="内容" />
-          <vu-cell title="单元格" value="内容" label="描述信息" />
-        </vu-cell-group>
+    <h2 class="vu-doc-demo-title first-title">基础用法</h2>
+      <div class="vu-hairline--top-bottom">
+        <VuCell :title="'单元格'" :value="'内容'" />
+        <VuCell :title="'单元格'" :value="'内容'" :label="'描述信息'" />
+      </div>
     </div>
 
     <div >
-        <p class="title">只设置 value</p>
-        <vu-cell-group>
-            <vu-cell value="内容" />
-        </vu-cell-group>
+    <h2 class="vu-doc-demo-title">只设置value</h2>
+      <div  class="vu-hairline--top-bottom">
+        <VuCell :value="'内容'" />
+      </div>
     </div>
-    <div>
-        <p class="title">展示图标</p>
-        <vu-cell-group>
-            <vu-cell title="单元格" icon="location" />
-        </vu-cell-group>
+
+    <div >
+    <h2 class="vu-doc-demo-title">展示图标</h2>
+      <div  class="vu-hairline--top-bottom">
+        <VuCell :title="'单元格'" icon="location" />
+      </div>
     </div>
-    <div>
-        <p class="title">展示箭头</p>
-        <vu-cell-group>
-            <vu-cell title="单元格" is-link />
-            <vu-cell title="单元格" is-link value="内容" />
-        </vu-cell-group>
+
+    <div >
+    <h2 class="vu-doc-demo-title">展示箭头</h2>
+      <div  class="vu-hairline--top-bottom">
+        <VuCell :title="'单元格'" is-link />
+        <VuCell :title="'单元格'" is-link :value="'内容'" />
+      </div>
     </div>
-    <div>
-        <p class="title">高级用法</p>
-        <vu-cell-group>
-            <vu-cell value="内容" icon="shop" is-link>
-                <template slot="title">
-                    <span class="van-cell-text">单元格</span>
-                    <span>标签</span>
-                    <!-- <van-tag type="danger">标签</van-tag> -->
-                </template>
-            </vu-cell>
-            <vu-cell title="单元格" icon="location" is-link />
-            <vu-cell title="单元格">
-                <Vu-IconButton slot="right-icon" name="search" class="vu-cell__right-icon" />
-            </vu-cell>
-        </vu-cell-group>
+
+    <div >
+    <h2 class="vu-doc-demo-title">高级用法</h2>
+      <div  class="vu-hairline--top-bottom">
+        <VuCell :value="'内容'" icon="shop" is-link>
+          <template slot="title">
+            <span class="van-cell-text">{{ '单元格' }}</span>
+            <!-- <div type="danger">{{ 'tag' }}</div> -->
+          </template>
+        </VuCell>
+        <VuCell :title="'单元格'" icon="location" is-link />
+        <VuCell :title="'单元格'">
+          <VuIconButton slot="right-icon" name="search" class="vu-cell__right-icon" />
+        </VuCell>
+      </div>
     </div>
   </div>
 </template>
@@ -65,9 +67,13 @@ export default {
   },
 
   methods: {
+    handleClick() {
+      console.log('cell click');
+    }
   }
 };
 </script>
+
 
 <style lang="scss">
     .demo-cell {
@@ -75,6 +81,7 @@ export default {
       background: #fff;
       width:100%;
       overflow:scroll;
+      padding-bottom:30px;
       .title{
         margin: 0;
         font-weight: 400;

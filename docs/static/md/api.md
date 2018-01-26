@@ -105,31 +105,31 @@ Vue.use(CellGroup);
 
 ###### 基础用法
 
-将`van-cell-group`组件看成一个容器即可
+将`vu-cell-group`组件看成一个容器即可
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" value="内容" />
-  <van-cell title="单元格" value="内容" label="描述信息" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" value="内容" />
+  <vu-cell title="单元格" value="内容" label="描述信息" />
+</vu-cell-group>
 ```
 
 ###### 只设置value
 只设置`value`时会向左对齐
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell value="内容" />
+</vu-cell-group>
 ```
 
 ###### 展示图标
 通过`icon`属性在标题左侧展示图标
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" icon="location" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" icon="location" />
+</vu-cell-group>
 ```
 
 
@@ -137,28 +137,28 @@ Vue.use(CellGroup);
 传入`is-link`属性则会在右侧显示箭头
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" is-link />
-  <van-cell title="单元格" is-link value="内容" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" is-link />
+  <vu-cell title="单元格" is-link value="内容" />
+</vu-cell-group>
 ```
 
 ###### 高级用法
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" icon="shop" is-link>
+<vu-cell-group>
+  <vu-cell value="内容" icon="shop" is-link>
     <template slot="title">
-      <span class="van-cell-text">单元格</span>
-      <van-tag type="danger">标签</van-tag>
+      <span class="vu-cell-text">单元格</span>
+      <vu-tag type="danger">标签</vu-tag>
     </template>
-  </van-cell>
-  <van-cell title="单元格" icon="location" is-link />
-  <van-cell title="单元格">
-    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
-  </van-cell>
-</van-cell-group>
+  </vu-cell>
+  <vu-cell title="单元格" icon="location" is-link />
+  <vu-cell title="单元格">
+    <vu-icon slot="right-icon" name="search" class="vu-cell__right-icon" />
+  </vu-cell>
+</vu-cell-group>
 ```
 
 #### CellGroup API
@@ -364,7 +364,7 @@ Vue.use(Progress);
 
 #### 使用指南
 ``` javascript
-import { Field } from 'vant';
+import { Field } from 'vui';
 
 Vue.use(Field);
 ```
@@ -483,7 +483,7 @@ Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 
 #### 使用指南
 ``` javascript
-import { Cell, CellGroup } from 'vant';
+import { Cell, CellGroup } from 'vui';
 
 Vue.use(Cell);
 Vue.use(CellGroup);
@@ -581,21 +581,21 @@ Vue.use(CellGroup);
 | right-icon | 自定义右侧按钮，默认是`arrow` |
 
 ----------
-## NavBar 导航栏
+### NavBar 导航栏
 
-### 使用指南
+#### 使用指南
 ``` javascript
-import { NavBar } from 'vant';
+import { NavBar } from 'vui';
 
 Vue.use(NavBar);
 ```
 
-### 代码演示
+#### 代码演示
 
-#### 基础用法
+##### 基础用法
 
 ```html
-<van-nav-bar
+<vu-nav-bar
   title="标题"
   left-text="返回"
   right-text="按钮"
@@ -618,17 +618,17 @@ export default {
 }
 ```
 
-#### 高级用法
+##### 高级用法
 通过 slot 定制内容
 
 ```html
-<van-nav-bar title="标题" left-text="返回" left-arrow>
-  <van-icon name="search" slot="right" />
-</van-nav-bar>
+<vu-nav-bar title="标题" left-text="返回" left-arrow>
+  <vu-icon name="search" slot="right" />
+</vu-nav-bar>
 ```
 
 
-### API
+#### API
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | `String` | `''` | - |
@@ -639,7 +639,7 @@ export default {
 | fixed | 是否固定在顶部 | `Boolean` | `false` | - |
 | z-index | 元素 z-index | `Number` | `1` | - |
 
-### Slot
+#### Slot
 
 | name | 描述 |
 |-----------|-----------|
@@ -647,12 +647,154 @@ export default {
 | left | 自定义左侧区域内容 |
 | right | 自定义右侧区域内容 |
 
-### Event
+#### Event
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | click-left | 点击左侧按钮时触发 | - |
 | click-right | 点击右侧按钮时触发 | - |
+
+----------
+
+
+### Tabs 标签页
+
+### 使用指南
+``` javascript
+import { Tab, Tabs } from 'vant';
+
+Vue.use(Tab);
+Vue.use(Tabs);
+```
+
+### 代码演示
+
+#### 基础用法
+
+默认情况下启用第一个 tab，可以通过`active`属性激活对应特定索引的 tab
+
+```html
+<vu-tabs :active="active">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+```js
+export default {
+  data() {
+    return {
+      active: 2
+    };
+  }
+}
+```
+
+#### 横向滚动
+
+默认情况下多于4个tab时，可以横向滚动tab。可以通过设置`swipe-threshold`这个阙值，多于这个阙值时，tab就会支持横向滚动。
+
+```html
+<vu-tabs>
+  <vu-tab v-for="index in 8" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+#### 禁用标签
+
+在对应的`vu-tab`上设置`disabled`属性即可。如果需要监听禁用事件，可以在`vu-tabs`上监听`disabled`事件。
+
+```html
+<vu-tabs @disabled="onClickDisabled">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index" :disabled="index === 2">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+```javascript
+export default {
+  methods: {
+    onClickDisabled() {
+      Toast('Disabled!')
+    }
+  }
+};
+```
+
+#### 样式风格
+
+`Tabs`目前有两种样式：`line`和`card`，默认为`line`样式，也就上面基础用法中的样式，你可以在`vu-tabs`上设置`type`为`card`改为card样式。
+
+```html
+<vu-tabs type="card">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+#### 点击事件
+
+可以在`vu-tabs`上绑定一个`click`事件，事件处理函数有一个参数，参数为对应`tab`在`tabs`中的索引。
+
+```html
+<vu-tabs @click="handleTabClick">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+```javascript
+export default {
+  methods: {
+    handleTabClick(index) {
+      Toast(index);
+    }
+  }
+};
+```
+
+#### 粘性布局
+通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
+
+```html
+<vu-tabs :active="active" sticky>
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+### Tabs API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选 |
+|-----------|-----------|-----------|-------------|-------------|
+| type | Tab 样式类型 | `String` | `line` | `card` |
+| active | 默认激活的 tab | `String` `Number` | `0` | - |
+| duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
+| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
+| sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
+
+### Tab API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | tab的标题 | `String` | - | - |
+| disabled | 是否禁用这个tab | `Boolean` | `false` | - |
+
+### Tabs Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click | 某个tab点击事件 | index：点击的`tab`的索引 |
+| disabled | 某个tab禁用时点击事件 | index：点击的`tab`的索引 |
+
+
 
 ----------
 
@@ -712,1181 +854,306 @@ export default {
 #### VonRadio
 
 ##### 用法
+#### 使用指南
+``` javascript
+import { NavBar } from 'vui';
 
-```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '单选框'}">
-    <div class="page-content">
-      <div class="item item-divider">
-        选择性别:
-      </div>
-
-      <von-radio :options="genderOptions" v-model="gender"></von-radio>
-
-      <p class="padding">
-        option index: {{ gender }}<br>
-        option text: {{ genderOptions[gender] }}
-      </p>
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        gender: 0,
-        genderOptions: ["男", "女"]
-      }
-    }
-  }
-</script>
+Vue.use(NavBar);
 ```
 
-##### 属性
+#### 代码演示
 
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| value | 值（用`v-model`替代以支持双向绑定） |  Number | 是 | 无 |
-| options | 选项列表 | Array | 是 | 无 |
-| theme | 主题 |  String | 否 | assertive |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/VonRadio)
-
-----------
-
-#### VonCheckbox
-
-##### 用法
+##### 基础用法
 
 ```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '复选框'}">
-    <div class="page-content">
-      <div class="item item-divider">
-        选择感兴趣的板块:
-      </div>
-
-      <von-checkbox :options="topics" v-model="chosenTopics" theme="positive"></von-checkbox>
-
-      <p class="padding">
-        chosen topics: {{ chosenTopics }}
-      </p>
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        chosenTopics: [],
-        topics: ["娱乐", "电影", "减肥", "搞笑", "科技"]
-      }
-    }
-  }
-</script>
+<vu-nav-bar
+  title="标题"
+  left-text="返回"
+  right-text="按钮"
+  left-arrow
+  @click-left="onClickLeft"
+  @click-right="onClickRight"
+/>
 ```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| value | 值（用`v-model`替代以支持双向绑定） |  Array | 是 | 无 |
-| options | 选项列表 | Array | 是 | 无 |
-| theme | 主题 |  String | 否 | assertive |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/VonCheckbox)
-
-----------
-
-#### VonToggle
-
-##### 用法
-
-```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '开关按钮'}">
-    <div class="page-content padding-top">
-      <von-toggle :text="toggleText" v-model="pushNotification"></von-toggle>
-      <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        toggleText: "是否开启推送",
-        pushNotification: true
-      }
-    }
-  }
-</script>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| text | 标签文字 | String | 是 | 无 |
-| value | 值（用`v-model`替代以支持双向绑定） |  Boolean | 是 | 无 |
-| theme | 主题 | String | 否 | assertive |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/VonToggle)
-
-----------
-
-#### VonRange
-
-##### 用法
-
-```html
-
-<von-range
-  v-model="volume"
-  :min="min"
-  :max="max"
-  theme="balanced"
-></von-range>
-
-<von-range
-  v-model="volume2"
-  :min="min"
-  :max="max"
-  theme="balanced"
->
-  <!-- 通过 text-left / text-right 两个 slot 对 range slider 左右两边的文字进行分发 -->
-  <i class="icon ion-volume-low" slot="text-left"></i>
-  <i class="icon ion-volume-high" slot="text-right"></i>
-</von-range>
-
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| value | 值（用`v-model`替代以支持双向绑定） | Number | 是 | 无 |
-| min | 最小值 | Number | 是 | 无 |
-| max | 最大值 | Number | 是 | 无 |
-| theme | 主题 | String | 否 | assertive |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/VonRange)
-
-----------
-
-#### VonHeader
-
-##### 用法
-
-```html
-<!-- 用 title / left / right 三个slot分发标题、左按钮、右按钮 -->
-<von-header theme="dark">
-  <button class="button button-icon ion-ios-arrow-back" slot="left"></button>
-  <span slot="title">标题文字</span>
-  <button class="button button-icon ion-navicon" slot="right"></button>
-</von-header>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| theme | 主题 | String | 否 | light |
-
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/VonHeader)
-
-----------
-
-#### Badge
-
-##### 用法
-
-```html
-<badge num="2"></badge>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| num | 徽章数字、文字 | String | 否 | 无 |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Badge)
-
-----------
-
-#### List
-
-通过 `<list>`、`<item>` 两个标签可快速布局列表
-
-##### 用法
-
-```html
-
-<!-- 使用 .list-ios 类制作左边缩进的ios风格列表 -->
-<list class="list-ios">
-  <item>
-    Item - 1
-  </item>
-  <item>
-    Item - 2
-  </item>
-  <item>
-    Item - 3
-  </item>
-</list>
-
-```
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/List)
-
-----------
-
-#### Cells
-
-##### 用法
-
-```html
-<template>
-  <div>
-    <cells :items="entrances" :on-cell-click="onCellClick" row="2"></cells>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        entrances: [
-          '<div class="entrance assertive"><i class="icon ion-ios-flame"></i><br><span>热门</span></div>',
-          '<div class="entrance energized"><i class="icon ion-ios-star"></i><br><span>好评</span></div>',
-          '<div class="entrance balanced"><i class="icon ion-ios-location"></i><br><span>附近</span></div>',
-          '<div class="entrance positive"><i class="icon ion-ios-search"></i><br><span>搜索</span></div>'
-        ]
-      }
-    }
-  }
-</script>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| row | 行数 | Number | 否 | 3 |
-| col | 列数 |  Number | 否 | 3 |
-| items | 列表项 |  Array | 是 | 无 |
-| onCellClick | 宫格单元点击回调 |  Function | 否 | 无 |
-| outerBorder | 是否显示宫格容器外边框 | Boolean, String | 否 | true |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Cells)
-
-----------
-
-#### Tabs
-
-##### 用法
-
-```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '选项卡'}">
-    <div class="page-content">
-      <tabs :tab-items="tabs" :tab-index="tabIndex" :on-tab-click="onTabClick"></tabs>
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      tabs: [
-        "tab 1",
-        "tab 2",
-        "tab 3"
-      ],
-      tabIndex: 0
-    },
-    methods: {
-      onTabClick(index) {
-        this.tabIndex = index
-      }
-    }
-  }
-</script>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| position | 位置，top/bottom | String | 否 | top |
-| bgColor | 背景色 | String | 否 | light |
-| tabColor | 前景色 | String | 否 | positive |
-| tabItems | 选项列表 | Array | 是 | 无 |
-| activeIndex | 激活选项索引 | Number | 是 | 无 |
-| onTabChanged | 选项卡点击回调 | Function | 否 | 无 |
-
-<p class="tip">
-bgColor、tabColor 值均以 vonic 情景色表示。
-</p>
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Tabs)
-
-----------
-
-#### ButtonBar
-
-##### 用法
-
-```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '按钮栏'}">
-    <div class="page-content padding-top">
-      <div class="padding">
-        商品分类:
-      </div>
-      <div class="padding light-bg">
-        <button-bar theme="assertive" :tab-items="promotions" :tab-index="promotionIndex"
-          :on-tab-click="index => promotionIndex = index"></button-bar>
-      </div>
-      <div class="item thin-border">
-        选中: {{ promotions[promotionIndex] }}
-      </div>
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        promotions: ["往期热卖", "抢购进行中"],
-        promotionIndex: 0
-      }
-    }
-  }
-</script>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| tabItems | 选项列表 | Array | 是 | 无 |
-| tabIndex | 当前选项索引 | Number | 是 | 无 |
-| theme | 主题 | String | 否 | positive |
-| onTabClick | 选项点击回调 | Function | 否 | 无 |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/ButtonBar)
-
-----------
-
-#### Scalable
-
-##### 用法
-
-```html
-<template>
-  <div class="padding">
-    <!-- 设置宽为父容器宽度，高为100px -->
-    <scalable width="100%" height="100" style="background-color: #FFF;">
-      <p>
-        Font Size = 16px (相当于8px)
-      </p>
-    </scalable>
-  </div>
-</template>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| scale | 缩小比例 | Number | 否 | 2 |
-| width | 容器宽度 | String | 否 | 100% |
-| height | 容器高度 | String | 否 | 100% |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Scalable)
-
-----------
-
-#### Swiper
-
-##### 用法
-
-```html
-<swiper ref="swiper"
-  direction="horizontal"
-  width="100%"
-  height="150"
-  pager-color="#ea5a49"
-  pager-bg-color="#e5e4e3"
-  hide-pager="false"
->
-  <swiper-item>
-    <h1 style="color: #0a9dc7;" @click="onClick()">Item 1</h1>
-  </swiper-item>
-
-  <swiper-item>
-    <h1 style="color: #44cc00;">Item 2</h1>
-  </swiper-item>
-
-  <swiper-item>
-    <h1 style="color: #ffc900;">Item 3</h1>
-  </swiper-item>
-</swiper>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| direction | vertical/horizontal | String | 否 | vertical |
-| width | 宽度 | String | 否 | 100% |
-| height | 高度 | String | 否 | 100% |
-| pagerColor | 导航颜色 | String | 否 | #333 |
-| pagerBgColor | 导航颜色 | String | 否 | #333 透明度40% |
-| hidePager | 不显示分页导航 | String | 否 | 'false' |
-| callback | SwiperItem 的 transitionEnd 回调 | Function | 否 | 无 |
-
-##### 方法
-
-- go(index: Integer) 滑动到指定页
-- next() 下一页
-- prev() 上一页
-- resize() 重置 swiper 容器
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Swiper)
-
-----------
-
-#### Scroll
-
-##### 用法
-
-```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '滚动'}">
-    <scroll class="page-content"
-            :on-refresh="onRefresh"
-            :on-infinite="onInfinite">
-      <item v-for="(item, index) in items" @click.native="onItemClick(index)" :class="{'item-stable': index % 2 == 0}">
-        {{ item }}
-      </item>
-
-      <div v-if="infiniteCount >= 2" slot="infinite" class="text-center">没有更多数据</div>
-    </scroll>
-  </div>
-</template>
-<script>
-  export default {
-    data () {
-      return {
-        items: [],
-        infiniteCount: 0
-      }
-    },
-
-    mounted() {
-      for (let i = 1; i <= 20; i++) {
-        this.items.push(i + ' - keep walking, be 2 with you.')
-      }
-      this.top = 1
-      this.bottom = 20
-    },
-
-    methods: {
-      onRefresh(done) {
-        setTimeout(() => {
-          let start = this.top - 1
-          for (let i = start; i > start - 10; i--) {
-            this.items.splice(0, 0, i + ' - keep walking, be 2 with you.')
-          }
-          this.top = this.top - 10;
-
-          done()
-        }, 1500)
-      },
-
-      onInfinite(done) {
-        setTimeout(() => {
-          if (this.infiniteCount < 2) {
-            let start = this.bottom + 1
-            for (let i = start; i < start + 10; i++) {
-              this.items.push(i + ' - keep walking, be 2 with you.')
-            }
-            this.bottom = this.bottom + 10;
-
-            this.infiniteCount++
-          }
-
-          done()
-        }, 1500)
-      },
-
-      onItemClick(index) {
-        console.log(index)
-      }
-    }
-  }
-</script>
-```
-
-<p class="tip">
-上面的例子通过 `slot="infinite"` 将加载更多的Loading效果替换为文字 `没有更多数据`
-</p>
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| onRefresh | 下拉刷新回调 | Function | 否 | 无 |
-| onInfinite | 无限加载回调 | Function | 否 | 无 |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Scroll)
-
-----------
-
-#### Scroller
-
-<p class="tip">
-**vonic** 整合了 [VueScroller](https://github.com/wangdahoo/vue-scroller)。关于 VueScroller 的用法及例子，请[查看这里](https://wangdahoo.github.io/vue-scroller/)。
-</p>
-
-----------
-
-#### Cascade
-
-##### 用法
-
-```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '级联'}">
-    <div class="page-content padding-top">
-      <div class="item item-divider">
-        选择您所属的行政区划：
-      </div>
-      <cascade :fields="fields" :data="cities" :value="value" :on-change="onChange"></cascade>
-
-      <!-- 使用远程数据 -->
-      <!--
-      <cascade
-        :fields="fields"
-        ajax-url="path/to/data"
-        :value="value"
-        :on-change="onChange"
-      ></cascade>
-      -->
-
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        fields: [
-          "省", "市", "区"
-        ],
-
-        cities: [
-          ['北京市', '市辖区', '东城区'],
-          // ...
-        ],
-        value: []
-      }
-    },
-
-    methods: {
-      onChange(value) {
-        this.value = value
-        console.log(this.value)
-      }
-    }
-  }
-</script>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| fields | 字段列表 | Array | 是 | 无 |
-| data | 数据（二维数组） | Array | 否 | 无 |
-| value | 值 | Array | 是 | 无 |
-| ajaxUrl | 返回数据的url | Array | 否 | 无 |
-| ajaxData | url返回数据对应的字段 | String | 否 | 无 |
-| onChange | 选项变更回调 | Function | 否 | 无 |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Cascade)
-
-----------
-
-#### Accordion
-
-##### 用法
-
-```html
-<accordion>
-  <accordion-item title="农夫" content-height="110">
-    <p>
-      如果有一天我能够拥有一个大果园，
-      我愿放下所有追求做个农夫去种田，
-      每一个早晨我耕耘在绿野田园，
-      每一个黄昏我守望在乡间的麦田。
-      我会把忧虑都融化在夕阳里，
-      让孤独的心等待秋收的欢喜。
-    </p>
-  </accordion-item>
-  <accordion-item title="渔夫" content-height="110">
-    <p>
-      如果有一天我能够拥有一条渔船，
-      我愿放下所有执着做个渔夫住在海边，
-      每一个早晨我航行在晨曦的海面，
-      每一个黄昏我遥望在无际的海云间。
-      我会把思绪都消失在波涛里，
-      让澎湃的心等待风雨后的平息。
-    </p>
-  </accordion-item>
-</accordion>
-```
-
-##### 属性
-
-- AccordionItem
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| title | 手风琴项标题 | String | 是 | 无 |
-| contentHeight | 手风琴项容器高度 | Number | 否 | 100 |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Accordion)
-
-----------
-
-#### Datepicker
-
-##### 用法
-
-```html
-<datepicker v-model="birthday" label="生日" date-format="yyyy-mm-dd"></datepicker>
-```
-
-##### 属性
-
-| 属性名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| label | 标签文字 | String | 否 | 无 |
-| value  | 值（用`v-model`替代以支持双向绑定） | String | 是 | - |
-| placeholder | 占位符 | String | 否 | - |
-| dateFormat | 日期格式 yyyy-mm-dd 或 yyyy/mm/dd | String | 否 | - |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Datepicker)
-
-----------
-
-### 服务
-
-#### $toast、$loading
-
-##### 用法
 
 ```js
-/* 显示一个文字提示，3秒后关闭 */
-$toast.show('这是一个提示', 3000).then(() => {
-  console.log('toast hide')
-})
-
-/* 显示一个文字提示，稍后手动关闭 */
-$toast.show('连接中..', 1E10)
-
-/* 手动关闭 */
-$toast.hide()
-
-/* 显示一个加载提示，稍后手动关闭 */
-$loading.show('拼命加载中..')
-
-setTimeout(() => {
-  $loading.hide()
-}, 2000)
+export default {
+  methods: {
+    onClickLeft() {
+      Toast('返回');
+    },
+    onClickRight() {
+      Toast('按钮');
+    }
+  }
+}
 ```
 
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/ToastAndLoading)
-
-----------
-
-#### $dialog
-
-##### 用法
-
-```js
-/* Alert 警告框 */
-$dialog.alert({
-  // 效果
-  effect: 'default',
-  // 标题
-  title: '提示',
-  // 内容
-  content: '这是一个警告框',
-  // 按钮文本
-  okText: '确定',
-  // 按钮主题
-  okTheme: 'assertive'
-})
-
-/* Confirm 确认框 */
-$dialog.confirm({
-  // 设置为ios样式
-  theme: 'ios',
-  // 标题
-  title: '在"微信"中打开链接吗?',
-  // 取消按钮文本
-  cancelText: '取消',
-  // 确定按钮文本
-  okText: '打开'
-}).then((res) => {
-  console.log('confirm result: ', res)
-})
-```
-
-[更多用例](https://github.com/wangdahoo/vonic/blob/master/demo/components/Dialog.vue)
-
-##### 方法
-
-###### Promise alert(options: Object)
-
-options 参数
-
-| 字段名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| effect | 效果 default、scale、slide | String | 否 | default |
-| title | 标题 | String | 否 | 提示 |
-| content | 内容 | String | 否 | 无 |
-| okText | 按钮文本 | String | 否 | 确定 |
-| okTheme | 按钮主题 | String | 否 | assertive |
-| theme | 主题样式 default、ios | String | 否 | default |
-
-<p class="warning">
-当 theme 值为 ios 时，其他主题相关的参数（okTheme, cancelTheme，effect等）将不再起作用。
-</p>
-
-###### Promise confirm(options: Object)
-
-options 参数
-
-| 字段名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| effect | 效果 default/scale/slide | String | 否 | default |
-| title | 标题 | String | 否 | 提示 |
-| content | 内容 | String | 否 | 无 |
-| okText | 确定按钮文本 | String | 否 | 确定 |
-| okTheme | 确定按钮主题 | String | 否 | assertive |
-| cancelText | 取消按钮文本 | String | 否 | 确定 |
-| cancelTheme | 取消按钮主题 | String | 否 | default |
-| theme | 主题样式 default、ios | String | 否 | default |
-
-<p class="warning">
-当 theme 值为 ios 时，其他主题相关的参数（okTheme, cancelTheme，effect等）将不再起作用。
-</p>
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Dialog)
-
-----------
-
-#### $popup
-
-##### 用法
+##### 高级用法
+通过 slot 定制内容
 
 ```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '弹层'}">
-    <div class="page-content padding-top">
-      <div class="item item-icon-right thin-border" @click="showPopup()">
-        Show Popup
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    methods: {
-      showPopup() {
-        let options = {
-          effect: 'scale',
-          title: '标题文字',
-          buttons: [
-            {text: '确定'},
-            {text: '取消'},
-          ]
-        }
-
-        let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">内容文字</p>', options)
-
-        popup.show().then((buttonIndex) => {
-          console.log(buttonIndex)
-        })
-      }
-    }
-  }
-</script>
+<vu-nav-bar title="标题" left-text="返回" left-arrow>
+  <vu-icon name="search" slot="right" />
+</vu-nav-bar>
 ```
 
-##### 方法
 
-###### Popup fromTemplate(template: String, options: Object)
+#### API
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | `String` | `''` | - |
+| left-text | 左侧文案 | `String` | `''` | - |
+| right-text | 右侧文案 | `String` | `''` | - |
+| left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
+| left-arrow-size | 左侧箭头图标字体大小 | `String` | `14px, 14rem` | - |
+| fixed | 是否固定在顶部 | `Boolean` | `false` | - |
+| z-index | 元素 z-index | `Number` | `1` | - |
 
-按模板字符串创建弹层实例
+#### Slot
 
-- template
+| name | 描述 |
+|-----------|-----------|
+| title | 自定义标题 |
+| left | 自定义左侧区域内容 |
+| right | 自定义右侧区域内容 |
 
-模板字符串
+### Event
 
-- options
-
-| 字段名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| effect | 效果 default/scale/slide | String | 否 | default |
-| title | 标题 | String | 否 | 无 |
-| cssClass | 自定义样式类 | String | 否 | 无 |
-| showClose | 是否显示关闭按钮 | Boolean | 否 | false |
-| buttons | 按钮定义 | Array | 否 | 无 |
-
-###### Popup fromTemplateUrl(templateUrl: String, options: Object)
-
-按 ajax 请求返回的模板字符串创建弹层实例
-
-- templateUrl
-
-返回模板字符串的url
-
-- options 参数
-
-同上
-
-##### Popup 实例方法
-
-###### show()
-
-显示弹层，返回一个在点击关闭后resolve 的 Promise
-
-###### hide()
-
-关闭弹层
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Popup)
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click-left | 点击左侧按钮时触发 | - |
+| click-right | 点击右侧按钮时触发 | - |
 
 ----------
 
-#### $actionSheet
 
-##### 用法
+### Swipe 轮播
 
-```js
-$actionSheet.show({
-  // 支持三种主题样式 ios/android/weixin
-  theme: 'weixin',
-  title: '标题',
-  buttons: {
-    // 操作列表选项文字及回调函数
-    'Action - 1': () => {
-      console.log('action 1 called.')
-    },
+#### 使用指南
+``` javascript
+import { Swipe, SwipeItem } from 'vui';
 
-    'Action - 2': () => {
-      console.log('action 2 called.')
-    }
-  }
-})
+Vue.use(Swipe);
+Vue.use(SwipeItem);
 ```
 
-##### 方法
+#### 代码演示
 
-###### show(options: Object)
-
-- options
-
-| 字段名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| theme | 操作列表主题 | String | 否 | ios |
-| title | 操作列表标题 | String | 是 | 无 |
-| buttons | 操作列表选项文字及回调函数 | Object | 是 | 无 |
-| cancelText | 取消按钮文字（theme 为 ios 或 weixin 时有效） | String | 否 | Cancel |
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/ActionSheet)
-
-----------
-
-#### $tabbar
-
-##### 用法
+##### 基础用法
+通过`autoplay`属性设置自动轮播间隔
 
 ```html
-<template>
-  <div class="page" v-tabbar="{'menus': menus, menuColor: '#B5B5B5', activeMenuColor: '#44CC00', onMenuClick: menuClicked}">
-    <router-view></router-view>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        menus: [
-          {
-            iconOn: 'ion-ios-home',
-            iconOff: 'ion-ios-home-outline',
-            text: '首页',
-            path: '/home'
-          },
-          {
-            iconOn: 'ion-ios-pricetags',
-            iconOff: 'ion-ios-pricetags-outline',
-            text: '折扣',
-            path: '/discount'
-          },
-          {
-            iconOn: 'ion-ios-cart',
-            iconOff: 'ion-ios-cart-outline',
-            text: '购物车',
-            path: '/cart',
-            badge: '5'
-          },
-          {
-            iconOn: 'ion-ios-person',
-            iconOff: 'ion-ios-person-outline',
-            text: '我的',
-            path: '/user'
-          }
-        ]
-      }
-    },
-
-    methods: {
-      menuClicked(menuIndex) {
-        console.log(menuIndex)
-      }
-    },
-
-    beforeDestroy() {
-      $tabbar.$emit('hideTabbar')
-    }
-  }
-</script>
+<vu-swipe :autoplay="3000">
+  <vu-swipe-item>1</vu-swipe-item>
+  <vu-swipe-item>2</vu-swipe-item>
+  <vu-swipe-item>3</vu-swipe-item>
+  <vu-swipe-item>4</vu-swipe-item>
+</vu-swipe>
 ```
 
-对应的嵌套路由配置：
+##### 图片懒加载
+配合 [Lazyload](#/zh-CN/component/lazyload) 组件实现图片懒加载
 
-```js
-  let routes = [
-    {
-      path: '/',
-      component: Index,
-      children: [
-        { path: 'home', component: Home },
-        { path: 'discount', component: Discount },
-        { path: 'cart', component: Cart },
-        { path: 'user', component: User }
+```html
+<vu-swipe :autoplay="3000">
+  <vu-swipe-item v-for="(image, index) in images" :key="index">
+    <img v-lazy="image" />
+  </vu-swipe-item>
+</vu-swipe>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      images: [
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
       ]
     }
-  ]
+  }
+}
 ```
 
-[完整代码](https://github.com/wangdahoo/vonic-documents/blob/master/demo/tabbar.html)
+#### API
 
-##### `v-tabbar`
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| autoplay | 自动轮播间隔，单位为 ms | `Number` | - | - |
+| duration | 动画时长，单位为 ms | `Number` | `500` | - |
+| showIndicators | 是否显示指示器 | `Boolean` | `true` | - |
+| initialSwipe | 初始位置，从 0 开始算 | `Number` | `0` | - |
 
-| 参数名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| menus | 菜单项列表 | Array | 是 | 无 |
-| menuColor | 菜单字体颜色 | String | 否 | #888 |
-| activeMenuColor | 激活菜单字体颜色 | String | 否 | #EA5A49 |
-| onMenuClick | 菜单点击回调 | Function | 否 | 无 |
+#### 事件
 
-##### menu 项
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| change | 每一页轮播结束后触发 | index, 当前页的索引 |
 
-| 参数名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| iconOn | 菜单选中 icon 类 | String | 是 | 无 |
-| iconOff | 菜单未选中 icon 类 | String | 是 | 无 |
-| text | 菜单文字 | String | 是 | 无 |
-| path | 菜单对应路由的 path | String | 否 | 无 |
-| badge | 菜单对应的 badge 的文字 | String | 否 | 无 |
+### Toast 轻提示
+
+#### 使用指南
+
+```javascript
+import { Toast } from 'vui';
+```
+
+#### 代码演示
+
+##### 文字提示
+
+```javascript
+Toast('我是提示文案，建议不超过十五字~');
+```
 
 
-<p class="tip">
-通过 emit `updateTabbarBadge` 事件，可以动态设置 tabbar 上的 badge
-</p>
+##### 加载提示
+
+```javascript
+Toast.loading({ mask: true });
+```
+
+
+##### 成功/失败提示
+
+```javascript
+Toast.success('成功文案');
+Toast.fail('失败文案');
+```
+
+
+##### 高级用法
+
+```javascript
+const toast = Toast.loading({
+  duration: 0,       // 持续展示 toast
+  forbidClick: true, // 禁用背景点击
+  message: '倒计时 3 秒'
+});
+
+let second = 3;
+const timer = setInterval(() => {
+  second--;
+  if (second) {
+    toast.message = `倒计时 ${second} 秒`;
+  } else {
+    clearInterval(timer);
+    Toast.clear();
+  }
+}, 1000);
+```
+
+##### 组件内调用
+引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 $toast 方法，便于在组件内调用。
 
 ```js
-// 设置 tabbar 上第2个菜单的 badge 数字为 5
-$tabbar.$emit('updateTabbarBadge', 1, 5)
-```
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/tabbar.html#/home)
-
-----------
-
-#### $modal
-
-##### 用法
-
-创建一个用 `.page-content` 类包裹的内容组件 `MyModal.vue`
-
-```html
-<template>
-  <div class="page-content padding padding-top">
-    <p>
-      我有一只小毛驴我从来也不骑。
-    </p>
-
-    <button v-if="!showMore" class="button button-assertive button-small" @click="more()">show more</button>
-    <p v-if="showMore">
-      有一天我心血来潮骑它去赶集。
-    </p>
-
-    <button class="button button-assertive button-small" @click="showAlert()">show dialog</button>
-  </div>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        showMore: false
-      }
-    },
-
-    methods: {
-      more() {
-        this.showMore = true
-      }
-    }
+export default {
+  mounted() {
+    this.$toast('提示文案');
   }
-</script>
+}
 ```
 
-创建一个用于加载上述内容组件的页面组件，通过 `$modal.fromComponent` 方法加载内容组件为模态窗
 
-```html
-<template>
-  <div class="page has-navbar" v-nav="{title: '模态窗'}">
-    <div class="page-content padding padding-top">
-      <button class="button button-assertive button-block" @click="showModal()">默认</button>
-    </div>
-  </div>
-</template>
-<script>
-  import MyModal from './MyModal.vue'
 
-  export default {
-    data() {
-      return {
-        modal: undefined
-      }
-    },
+#### 方法
 
-    mounted() {
-      $modal.fromComponent(MyModal, {
-        title: '模态窗标题',
-        theme: 'default'
-      }).then((modal) => {
-        this.modal = modal
-      })
-    },
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| Toast | `options | message` | toast 实例 | 展示提示 |
+| Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
+| Toast.success | `options | message` | toast 实例 | 展示成功提示 |
+| Toast.fail | `options | message` | toast 实例 | 展示失败提示 |
+| Toast.clear | - | `void` | 关闭提示 |
 
-    destroyed() {
-      if (this.modal)
-        $modal.destroy(this.modal)
-    },
+#### Options
 
-    methods: {
-      showModal() {
-        this.modal.show()
-      }
-    }
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| type | 提示类型 | `String` | `text` | `loading` `success` `fail` `html` |
+| message | 内容 | `String` | `''` | - |
+| position | 位置 | `String` | `middle` | `top` `bottom` |
+| mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
+| forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
+| duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |
+
+### Dialog 弹出框
+
+#### 使用指南
+
+```js
+import { Dialog } from 'vant';
+```
+
+#### 代码演示
+
+##### 消息提示
+用于提示一些消息，只包含一个确认按钮
+
+```javascript
+Dialog.alert({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
+
+Dialog.alert({
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
+```
+
+##### 消息确认
+用于确认消息，包含取消和确认按钮
+
+```javascript
+Dialog.confirm({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on confirm
+}).catch(() => {
+  // on cancel
+});
+```
+
+##### 组件内调用
+引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 $dialog 方法，便于在组件内调用。
+
+```js
+export default {
+  mounted() {
+    this.$dialog.alert({
+      message: '弹窗内容'
+    });
   }
-</script>
+}
 ```
 
-##### 方法
+#### 方法
 
-###### Promise $modal.fromComponent(contentComponent: VueComponent, options: Object)
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| Dialog.alert | options | `Promise` | 展示消息提示弹窗 |
+| Dialog.confirm | options | `Promise` | 展示消息确认弹窗 |
+| Dialog.close | - | `void` | 关闭弹窗 |
 
-创建模态窗
+#### Options
 
-- contentComponent 需要加载到modal中的内容组件
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | `String` | - | - |
+| message | 内容 | `String` | - | - |
+| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` | - |
+| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` | - |
+| confirmButtonText | 确认按钮的文案 | `String` |  `确认` | - |
+| cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
+| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
+| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
+| lockOnScroll | 是否禁用背景滚动 | `Boolean` | `true` | - |
 
-- options
 
-| 字段名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| title | 模态窗标题 (标题为空时，则不显示 header bar) | String | 否 | 无 |
-| theme | 模态窗主题 | String | 否 | 无 |
-| destroyOnHide | 是否在调用模态窗实例的hide方法后注销模态窗实例 | Boolean | 否 | false |
-| onHide | 关闭模态窗回调函数 | Function | 否 | 无 |
 
-##### Modal 实例方法、属性
-
-###### show()
-
-显示模态窗
-
-###### hide()
-
-隐藏模态窗
-
-###### content
-
-contentComponent 对应的 Vue 实例
-
-> [演示](https://wangdahoo.github.io/vonic-documents/demo/modal.html)
-
-----------
-
-#### $app
-
-##### 方法
-
-###### setTitle(title: String)
-
-设置当前导航栏标题文字
-
-----------
-
-### 其他
-
-#### Vonic.app
-
-##### Vue.use(Vonic.app, params)
-
-`params` 应用启动参数
-
-| 启动项 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| routes | 单页应用路由 | Array | 是 | 无 |
-| store | Vuex Store | Object | 否 | 无 |
-
-##### setConfig(name: String)
-
-设定 `Vonic.app` 默认选项
-
-| 启动项 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| beforeEach | 全局 before 导航钩子 | Func | 否 | 无 |
-| afterEach | 全局 after 导航钩子 | Func | 否 | 无 |
-| routerOptions | Router 构造参数（除 routes 外） | Object | 否 | 无 |
-| pushMethod | 路由切换方式 push 或 replace | String | 否 | push |
-| pageTransition | 强制定义页面切换方式 ios 或 android | String | 否 | 无 |
-
-##### getConfig(name: String)
-
-获取 `Vonic.app` 默认选项
-
-##### nextDirection(direction: String)
-
-手动定义下一次路由切换的方向
-
-| 参数名 | 描述 | 类型 | 必选 | 默认值 |
-|-----|-----|-----|-----|-----|
-| direction | 页面切换方，forward 或 back | String | 是 | 无 |
-
-##### pageContentScrollTop(value: Integer)
-
-设置或获取当前 `.page-content` 容器的滚动位置（不传 `value` 时为获取）

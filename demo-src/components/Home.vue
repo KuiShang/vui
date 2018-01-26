@@ -3,7 +3,6 @@
     <div class="page-content">
       <!-- Basic -->
       <h3>基础</h3>
-
       <ul class="list-ios hl-list-borderless">
         <router-link tag="li" class="item-icon-right" :to="{ name: 'checkbox'}">
           Checkbox <span class="item-note">复选框</span>
@@ -34,7 +33,7 @@
            <span class="item-note">Cell单元格</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
-        
+
         <router-link tag="li" class="item-icon-right" :to="{ name: 'progress'}">
           <span class="item-note">progress进度条</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -60,69 +59,42 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
-
-        <li class="item-icon-right" @click.native="$router.forward('/basic/mdButton')">
-          MdButton <span class="item-note">Material Design 风格</span>
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'imagePreview'}">
+          <span class="item-note">imagePreview</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
+        </router-link>
+
         <router-link tag="li" class="item-icon-right" :to="{ name: 'field'}">
           Field <span class="item-note">输入框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
-        <li class="item-icon-right" @click.native="$router.forward('/basic/search')">
-          Search <span class="item-note">搜索框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
-        <li class="item-icon-right" @click.native="$router.forward('/basic/radio')">
-          Radio <span class="item-note">单选框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
 
-        <li class="item-icon-right" @click.native="$router.forward('/basic/toggle')">
-          Toggle <span class="item-note">开关按钮</span>
+      </ul>
+
+      <h3>操作提示</h3>
+      <ul class="list-ios hl-list-borderless">
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'dialog'}">
+          <span class="item-note">dialog弹出框</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
-        <li class="item-icon-right" @click.native="$router.forward('/basic/range')">
-          Range Slider <span class="item-note">滑块</span>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'toast'}">
+          <span class="item-note">toast轻提示</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
-        <li class="item-icon-right" @click.native="$router.forward('/basic/badge')">
-          Badge <span class="item-note">徽章</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
-        <li class="item-icon-right" @click.native="$router.forward('/basic/dialog')">
-          Dialog <span class="item-note">对话框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
-        <li class="item-icon-right" @click.native="toast()">
-          Toast <span class="item-note">文字提示</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
-        <li class="item-icon-right" @click.native="loading('正在加载..')">
-          Loading <span class="item-note">加载提示</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
+        </router-link>
       </ul>
 
       <!-- layout -->
       <h3>布局</h3>
       <ul class="list-ios hl-list-borderless">
-        <li class="item-icon-right" @click.native="$router.forward('/layout/header')">
-          Header <span class="item-note">页头</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
-        <li class="item-icon-right" @click.native="$router.forward('/layout/list')">
-          List <span class="item-note">列表</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </li>
         <router-link tag="li" class="item-icon-right" :to="{ name: 'cell'}">
           Cell <span class="item-note">单元格</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
-        <li class="item-icon-right" @click.native="$router.forward('/layout/tabs')">
-          Tabs <span class="item-note">选项卡</span>
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'tab'}">
+          Tab <span class="item-note">标签页</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </li>
+        </router-link>
         <li class="item-icon-right" @click.native="$router.forward('/layout/buttonbar')">
           ButtonBar <span class="item-note">iOS 选项卡</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -188,8 +160,8 @@
           Modal <span class="item-note">模态窗</span>
           <i class="icon ion-ios-arrow-right"></i>
         </li>
+
       </ul>
-      <div class="footer"></div>
     </div>
     <router-view></router-view>
   </div>
