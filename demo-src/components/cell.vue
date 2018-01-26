@@ -75,6 +75,7 @@ export default {
       background: #fff;
       width:100%;
       overflow:scroll;
+      padding-bottom:30px;
       .title{
         margin: 0;
         font-weight: 400;
