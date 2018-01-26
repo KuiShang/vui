@@ -15,6 +15,7 @@ import navBar from './components/navBar'
 import loadmore from './components/loadmore'
 import list from './components/list'
 import imagePreview from './components/image-preview'
+import lazyload from './components/lazyload'
 import toast from './components/toast'
 import dialog from './components/dialog'
 
@@ -88,6 +89,11 @@ const routes = [{
   path: '/imagePreview',
   name: 'imagePreview',
   component: imagePreview
+},
+{
+  path: '/lazyload',
+  name: 'lazyload',
+  component: lazyload
 },
 {
   path: '/toast',

@@ -14,6 +14,7 @@ import CellGroup from '../packages/cell-group/index.js'
 import NavBar from '../packages/nav-bar/index.js'
 import ImagePreview from '../packages/image-preview/index.js'
 import Popup from '../packages/popup/index.js'
+import Lazyload from '../packages/lazyload/index.js'
 import Toast from '../packages/toast/index.js'
 import Dialog from '../packages/dialog/index.js'
 import Loadmore from '../packages/loadmore/index.js'
@@ -34,6 +35,7 @@ const components = [
   NavBar,
   ImagePreview,
   Popup,
+  Lazyload,
   Toast,
   Dialog,
   Loadmore,
@@ -42,7 +44,11 @@ const components = [
 
 const install = (Vue, opts = {}) => {
   components.map(component => {
-    Vue.component(component.name, component)
+    if (component.name === 'VuLazyload') {
+      Vue.use(component, {lazyComponent: true})
+    } else {
+      Vue.component(component.name, component)
+    }
   })
 }
 
@@ -68,6 +74,7 @@ const vui = {
   NavBar,
   ImagePreview,
   Popup,
+  Lazyload,
   Toast,
   Dialog,
   Loadmore,

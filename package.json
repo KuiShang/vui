@@ -25,7 +25,8 @@
     "karma-chrome-launcher": "^2.2.0",
     "progress-bar-webpack-plugin": "^1.10.0",
     "style-loader": "^0.19.1",
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-lazyload": "^1.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
