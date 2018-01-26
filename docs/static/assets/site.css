@@ -75,9 +75,8 @@ hr {
 }
 
 .demo-ios { 
-  margin-top: 85px; 
-  width: 320px; 
-  height: 568px; 
+  width: 440px;
+  height: 778px;
 }
 
 body.mobile .device-ios {
