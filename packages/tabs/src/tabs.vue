@@ -149,7 +149,6 @@ export default({
         if (!this.$refs.tabs) {
           return;
         }
-        console.log(this.duration)
         const tab = this.$refs.tabs[this.curActive];
         this.navBarStyle = {
           width: `${tab.offsetWidth || 0}px`,

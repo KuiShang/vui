@@ -94,11 +94,11 @@ export default {
 
   methods: {
     onClickDisabled() {
-      Toast('Disabled!');
+      this.$toast('Disabled!');
     },
 
     handleTabClick(index) {
-      Toast(index);
+      this.$toast(index);
     }
   }
 };
