@@ -12,7 +12,7 @@ import field from './components/field'
 import cell from './components/cell'
 import navBar from './components/navBar'
 import imagePreview from './components/image-preview'
-
+import lazyload from './components/lazyload'
 Vue.use(Router)
 const routes = [{
   path: '/',
@@ -68,6 +68,11 @@ const routes = [{
   path: '/imagePreview',
   name: 'imagePreview',
   component: imagePreview
+},
+{
+  path: '/lazyload',
+  name: 'lazyload',
+  component: lazyload
 }]
 
 export default new Router({

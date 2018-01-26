@@ -58,6 +58,11 @@
           Field <span class="item-note">输入框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+
+          <router-link tag="li" class="item-icon-right" :to="{ name: 'lazyload'}">
+          Field <span class="item-note">lazyload</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
        
       </ul>
 

@@ -14,7 +14,7 @@ import CellGroup from '../packages/cell-group/index.js'
 import NavBar from '../packages/nav-bar/index.js'
 import ImagePreview from '../packages/image-preview/index.js'
 import Popup from '../packages/popup/index.js'
-
+import Lazyload from '../packages/lazyload/index.js'
 const components = [
   Checkbox,
   CheckboxGroup,
@@ -29,12 +29,17 @@ const components = [
   CellGroup,
   NavBar,
   ImagePreview,
-  Popup
+  Popup,
+  Lazyload
 ]
 
 const install = (Vue, opts = {}) => {
   components.map(component => {
-    Vue.component(component.name, component)
+    if (component.name === 'VuLazyload') {
+      Vue.use(component, {lazyComponent: true})
+    } else {
+      Vue.component(component.name, component)
+    }
   })
 }
 
@@ -59,7 +64,8 @@ const vui = {
   CellGroup,
   NavBar,
   ImagePreview,
-  Popup
+  Popup,
+  Lazyload
 }
 
 export default vui
