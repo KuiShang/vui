@@ -19,7 +19,6 @@ import Toast from '../packages/toast/index.js'
 import Dialog from '../packages/dialog/index.js'
 import Loadmore from '../packages/loadmore/index.js'
 import List from '../packages/list/index.js'
-
 const components = [
   Checkbox,
   CheckboxGroup,
