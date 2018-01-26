@@ -49,8 +49,19 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'list'}">
+          <span class="item-note">list</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'loadmore'}">
+          <span class="item-note">loadmore</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
         <router-link tag="li" class="item-icon-right" :to="{ name: 'imagePreview'}">
           <span class="item-note">imagePreview</span>
+          <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
         <router-link tag="li" class="item-icon-right" :to="{ name: 'field'}">

@@ -36,7 +36,7 @@ export default {
 .demo-container {
   padding: 5px;
   width: calc(320px + 15px) ;
-  height: 568px;
+  height: 538px;
   box-sizing: border-box;
   position: absolute;
   top:30px;

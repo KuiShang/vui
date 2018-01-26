@@ -1,6 +1,5 @@
 @import './common/var.scss';
-@import './mixins/ellipsis.scss';
-
+@import './mixins/mixins';
 
 @include b(tabs) {
   position: relative;

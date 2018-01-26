@@ -12,6 +12,8 @@ import field from './components/field'
 import cell from './components/cell'
 import tab from './components/tab'
 import navBar from './components/navBar'
+import loadmore from './components/loadmore'
+import list from './components/list'
 import imagePreview from './components/image-preview'
 import lazyload from './components/lazyload'
 import toast from './components/toast'
@@ -74,28 +76,35 @@ const routes = [{
   component: navBar
 },
 {
+  path: '/loadmore',
+  name: 'loadmore',
+  component: loadmore
+},
+{
+  path: '/list',
+  name: 'list',
+  component: list
+},
+{
   path: '/imagePreview',
   name: 'imagePreview',
   component: imagePreview
 },
-<<<<<<< HEAD
 {
   path: '/lazyload',
   name: 'lazyload',
   component: lazyload
+},
+{
+  path: '/toast',
+  name: 'toast',
+  component: toast
+},
+{
+  path: '/dialog',
+  name: 'dialog',
+  component: dialog
 }]
-=======
-  {
-    path: '/toast',
-    name: 'toast',
-    component: toast
-  },
-  {
-    path: '/dialog',
-    name: 'dialog',
-    component: dialog
-  }]
->>>>>>> 08f51c8a4a3b3d19d51ab9c36c3daacb95303fe4
 
 export default new Router({
   routes: routes

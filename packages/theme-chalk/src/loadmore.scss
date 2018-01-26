@@ -1,0 +1,36 @@
+@import './common/var.scss';
+@import "./mixins/mixins";
+@include b(loadmore) {
+    overflow: hidden;
+
+    @include e(content) {
+        @include when(dropped) {
+            transition: .2s;
+        }
+    }
+    
+    @include e((top, bottom)) {
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+    }
+    
+    @include e(top) {
+        margin-top: -50px;
+    }
+
+    @include e(bottom) {
+        margin-bottom: -50px;
+    }
+
+    @include e(loading) {
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    @include e(text) {
+        vertical-align: middle;
+        color: $gray-dark;
+    }
+}

@@ -2,6 +2,7 @@ import NavBar from 'packages/nav-bar'
 import { mount } from 'avoriaz'
 import { DOMChecker } from '../utils'
 
+/*eslint-disable*/
 describe('Navbar', () => {
   let wrapper;
   afterEach(() => {

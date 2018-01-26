@@ -8,13 +8,14 @@
     "button": "./packages/button/index.js",
     "progress": "./packages/progress/index.js",
     "switch": "./packages/switch/index.js",
-	  "cell": "./packages/cell/index.js",
-	  "cell-group": "./packages/cell-group/index.js",
+    "cell": "./packages/cell/index.js",
+    "cell-group": "./packages/cell-group/index.js",
     "nav-bar": "./packages/nav-bar/index.js",
     "image-preview": "./packages/image-preview/index.js",
     "popup": "./packages/popup/index.js",
     "lazyload": "./packages/lazyload/index.js",
     "toast": "./packages/toast/index.js",
-    "dialog": "./packages/dialog/index.js"
+    "dialog": "./packages/dialog/index.js",
+    "loadmore": "./packages/loadmore/index.js",
+    "list": "./packages/list/index.js"
 }
-
