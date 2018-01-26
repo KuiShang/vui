@@ -2,7 +2,8 @@ import NavBar from 'vui/packages/nav-bar'
 import { mount } from 'avoriaz'
 import { DOMChecker } from '../utils'
 
-descride('Navbar', () => {
+/*eslint-disable*/
+describe('Navbar', () => {
   let wrapper;
   afterEach(() => {
     wrapper && wrapper.destory();
