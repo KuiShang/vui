@@ -11,6 +11,9 @@ import Progress from '../packages/progress/index.js'
 import Switch from '../packages/switch/index.js'
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
+import Field from '../packages/field/index.js'
+import Tab from '../packages/tab/index.js'
+import Tabs from '../packages/tabs/index.js'
 import NavBar from '../packages/nav-bar/index.js'
 import ImagePreview from '../packages/image-preview/index.js'
 import Popup from '../packages/popup/index.js'
@@ -29,6 +32,9 @@ const components = [
   Switch,
   Cell,
   CellGroup,
+  Field,
+  Tab,
+  Tabs,
   NavBar,
   ImagePreview,
   Popup,
@@ -61,6 +67,9 @@ const vui = {
   Switch,
   Cell,
   CellGroup,
+  Field,
+  Tab,
+  Tabs,
   NavBar,
   ImagePreview,
   Popup,
