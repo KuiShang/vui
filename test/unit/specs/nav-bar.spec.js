@@ -1,13 +1,12 @@
-// /*eslint-disable*/
-// import NavBar from 'vui/packages/nav-bar'
-// import { mount } from 'avoriaz'
-// import { DOMChecker } from '../utils'
+import NavBar from 'packages/nav-bar'
+import { mount } from 'avoriaz'
+import { DOMChecker } from '../utils'
 
-// describe('Navbar', () => {
-//   let wrapper;
-//   afterEach(() => {
-//     wrapper && wrapper.destory();
-//   });
+describe('Navbar', () => {
+  let wrapper;
+  afterEach(() => {
+    wrapper && wrapper.destroy();
+  });
 
 //   it('create a NavBar', () => {
 //     wrapper = mount(NavBar, {

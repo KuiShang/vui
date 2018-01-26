@@ -105,31 +105,31 @@ Vue.use(CellGroup);
 
 ###### 基础用法
 
-将`van-cell-group`组件看成一个容器即可
+将`vu-cell-group`组件看成一个容器即可
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" value="内容" />
-  <van-cell title="单元格" value="内容" label="描述信息" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" value="内容" />
+  <vu-cell title="单元格" value="内容" label="描述信息" />
+</vu-cell-group>
 ```
 
 ###### 只设置value
 只设置`value`时会向左对齐
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell value="内容" />
+</vu-cell-group>
 ```
 
 ###### 展示图标
 通过`icon`属性在标题左侧展示图标
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" icon="location" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" icon="location" />
+</vu-cell-group>
 ```
 
 
@@ -137,28 +137,28 @@ Vue.use(CellGroup);
 传入`is-link`属性则会在右侧显示箭头
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" is-link />
-  <van-cell title="单元格" is-link value="内容" />
-</van-cell-group>
+<vu-cell-group>
+  <vu-cell title="单元格" is-link />
+  <vu-cell title="单元格" is-link value="内容" />
+</vu-cell-group>
 ```
 
 ###### 高级用法
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" icon="shop" is-link>
+<vu-cell-group>
+  <vu-cell value="内容" icon="shop" is-link>
     <template slot="title">
-      <span class="van-cell-text">单元格</span>
-      <van-tag type="danger">标签</van-tag>
+      <span class="vu-cell-text">单元格</span>
+      <vu-tag type="danger">标签</vu-tag>
     </template>
-  </van-cell>
-  <van-cell title="单元格" icon="location" is-link />
-  <van-cell title="单元格">
-    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
-  </van-cell>
-</van-cell-group>
+  </vu-cell>
+  <vu-cell title="单元格" icon="location" is-link />
+  <vu-cell title="单元格">
+    <vu-icon slot="right-icon" name="search" class="vu-cell__right-icon" />
+  </vu-cell>
+</vu-cell-group>
 ```
 
 #### CellGroup API
@@ -364,7 +364,7 @@ Vue.use(Progress);
 
 #### 使用指南
 ``` javascript
-import { Field } from 'vant';
+import { Field } from 'vui';
 
 Vue.use(Field);
 ```
@@ -483,7 +483,7 @@ Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 
 #### 使用指南
 ``` javascript
-import { Cell, CellGroup } from 'vant';
+import { Cell, CellGroup } from 'vui';
 
 Vue.use(Cell);
 Vue.use(CellGroup);
@@ -585,7 +585,7 @@ Vue.use(CellGroup);
 
 #### 使用指南
 ``` javascript
-import { NavBar } from 'vant';
+import { NavBar } from 'vui';
 
 Vue.use(NavBar);
 ```
@@ -595,7 +595,7 @@ Vue.use(NavBar);
 ##### 基础用法
 
 ```html
-<van-nav-bar
+<vu-nav-bar
   title="标题"
   left-text="返回"
   right-text="按钮"
@@ -622,9 +622,280 @@ export default {
 通过 slot 定制内容
 
 ```html
-<van-nav-bar title="标题" left-text="返回" left-arrow>
-  <van-icon name="search" slot="right" />
-</van-nav-bar>
+<vu-nav-bar title="标题" left-text="返回" left-arrow>
+  <vu-icon name="search" slot="right" />
+</vu-nav-bar>
+```
+
+
+#### API
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | `String` | `''` | - |
+| left-text | 左侧文案 | `String` | `''` | - |
+| right-text | 右侧文案 | `String` | `''` | - |
+| left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
+| left-arrow-size | 左侧箭头图标字体大小 | `String` | `14px, 14rem` | - |
+| fixed | 是否固定在顶部 | `Boolean` | `false` | - |
+| z-index | 元素 z-index | `Number` | `1` | - |
+
+#### Slot
+
+| name | 描述 |
+|-----------|-----------|
+| title | 自定义标题 |
+| left | 自定义左侧区域内容 |
+| right | 自定义右侧区域内容 |
+
+#### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click-left | 点击左侧按钮时触发 | - |
+| click-right | 点击右侧按钮时触发 | - |
+
+----------
+
+
+### Tabs 标签页
+
+### 使用指南
+``` javascript
+import { Tab, Tabs } from 'vant';
+
+Vue.use(Tab);
+Vue.use(Tabs);
+```
+
+### 代码演示
+
+#### 基础用法
+
+默认情况下启用第一个 tab，可以通过`active`属性激活对应特定索引的 tab
+
+```html
+<vu-tabs :active="active">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+```js
+export default {
+  data() {
+    return {
+      active: 2
+    };
+  }
+}
+```
+
+#### 横向滚动
+
+默认情况下多于4个tab时，可以横向滚动tab。可以通过设置`swipe-threshold`这个阙值，多于这个阙值时，tab就会支持横向滚动。
+
+```html
+<vu-tabs>
+  <vu-tab v-for="index in 8" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+#### 禁用标签
+
+在对应的`vu-tab`上设置`disabled`属性即可。如果需要监听禁用事件，可以在`vu-tabs`上监听`disabled`事件。
+
+```html
+<vu-tabs @disabled="onClickDisabled">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index" :disabled="index === 2">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+```javascript
+export default {
+  methods: {
+    onClickDisabled() {
+      Toast('Disabled!')
+    }
+  }
+};
+```
+
+#### 样式风格
+
+`Tabs`目前有两种样式：`line`和`card`，默认为`line`样式，也就上面基础用法中的样式，你可以在`vu-tabs`上设置`type`为`card`改为card样式。
+
+```html
+<vu-tabs type="card">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+#### 点击事件
+
+可以在`vu-tabs`上绑定一个`click`事件，事件处理函数有一个参数，参数为对应`tab`在`tabs`中的索引。
+
+```html
+<vu-tabs @click="handleTabClick">
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+```javascript
+export default {
+  methods: {
+    handleTabClick(index) {
+      Toast(index);
+    }
+  }
+};
+```
+
+#### 粘性布局
+通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
+
+```html
+<vu-tabs :active="active" sticky>
+  <vu-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </vu-tab>
+</vu-tabs>
+```
+
+### Tabs API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选 |
+|-----------|-----------|-----------|-------------|-------------|
+| type | Tab 样式类型 | `String` | `line` | `card` |
+| active | 默认激活的 tab | `String` `Number` | `0` | - |
+| duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
+| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
+| sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
+
+### Tab API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | tab的标题 | `String` | - | - |
+| disabled | 是否禁用这个tab | `Boolean` | `false` | - |
+
+### Tabs Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click | 某个tab点击事件 | index：点击的`tab`的索引 |
+| disabled | 某个tab禁用时点击事件 | index：点击的`tab`的索引 |
+
+
+
+----------
+
+#### Search
+
+##### 用法：
+
+```html
+<template>
+  <div class="page has-navbar" v-nav="{title: '搜索框'}">
+    <div class="page-content">
+      <search v-model="keywords" placeholder="输入关键字" :on-search="onSearch" :on-cancel="onCancel"></search>
+
+      <div class="padding" v-show="searching">
+        <span v-if="keywords">searching for '{{keywords}}'.</span>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        keywords: '',
+        searching: false
+      }
+    },
+
+    methods: {
+      onSearch(keywords) {
+        this.searching = true;
+      },
+
+      onCancel() {
+        this.searching = false;
+        this.keywords = ''
+      }
+    }
+  }
+</script>
+```
+
+##### 属性
+
+| 属性名 | 描述 | 类型 | 必选 | 默认值 |
+|-----|-----|-----|-----|-----|
+| value | 值（用`v-model`替代以支持双向绑定） |  String | 是 | 无 |
+| placeholder | 占位符 |  String | 否 | Search |
+| onSearch | 搜索回调函数 |  Function | 否 | 无 |
+| onCancel | 取消回调函数 |  Function | 否 | 无 |
+| cancelText | 取消按钮文案 |  String | 否 | Cancel |
+
+> [演示](https://wangdahoo.github.io/vonic-documents/demo/#/Search)
+
+----------
+
+#### VonRadio
+
+##### 用法
+#### 使用指南
+``` javascript
+import { NavBar } from 'vui';
+
+Vue.use(NavBar);
+```
+
+#### 代码演示
+
+##### 基础用法
+
+```html
+<vu-nav-bar
+  title="标题"
+  left-text="返回"
+  right-text="按钮"
+  left-arrow
+  @click-left="onClickLeft"
+  @click-right="onClickRight"
+/>
+```
+
+```js
+export default {
+  methods: {
+    onClickLeft() {
+      Toast('返回');
+    },
+    onClickRight() {
+      Toast('按钮');
+    }
+  }
+}
+```
+
+##### 高级用法
+通过 slot 定制内容
+
+```html
+<vu-nav-bar title="标题" left-text="返回" left-arrow>
+  <vu-icon name="search" slot="right" />
+</vu-nav-bar>
 ```
 
 
@@ -673,23 +944,23 @@ Vue.use(SwipeItem);
 通过`autoplay`属性设置自动轮播间隔
 
 ```html
-<van-swipe :autoplay="3000">
-  <van-swipe-item>1</van-swipe-item>
-  <van-swipe-item>2</van-swipe-item>
-  <van-swipe-item>3</van-swipe-item>
-  <van-swipe-item>4</van-swipe-item>
-</van-swipe>
+<vu-swipe :autoplay="3000">
+  <vu-swipe-item>1</vu-swipe-item>
+  <vu-swipe-item>2</vu-swipe-item>
+  <vu-swipe-item>3</vu-swipe-item>
+  <vu-swipe-item>4</vu-swipe-item>
+</vu-swipe>
 ```
 
 ##### 图片懒加载
 配合 [Lazyload](#/zh-CN/component/lazyload) 组件实现图片懒加载
 
 ```html
-<van-swipe :autoplay="3000">
-  <van-swipe-item v-for="(image, index) in images" :key="index">
+<vu-swipe :autoplay="3000">
+  <vu-swipe-item v-for="(image, index) in images" :key="index">
     <img v-lazy="image" />
-  </van-swipe-item>
-</van-swipe>
+  </vu-swipe-item>
+</vu-swipe>
 ```
 
 ```javascript
@@ -720,54 +991,169 @@ export default {
 |-----------|-----------|-----------|
 | change | 每一页轮播结束后触发 | index, 当前页的索引 |
 
-----------
-
-### ImagePreview 图片预览
+### Toast 轻提示
 
 #### 使用指南
 
-`ImagePreview`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
-
-```js
-import { ImagePreview } from 'vant';
+```javascript
+import { Toast } from 'vui';
 ```
 
 #### 代码演示
 
-##### 基础用法
+##### 文字提示
 
 ```javascript
-ImagePreview([
-  'https://img.yzcdn.cn/1.jpg',
-  'https://img.yzcdn.cn/2.jpg'
-]);
+Toast('我是提示文案，建议不超过十五字~');
 ```
 
-##### 指定初始位置
+
+##### 加载提示
 
 ```javascript
-ImagePreview([
-  'https://img.yzcdn.cn/1.jpg',
-  'https://img.yzcdn.cn/2.jpg'
-], 1);
+Toast.loading({ mask: true });
 ```
 
-##### 手动关闭
+
+##### 成功/失败提示
 
 ```javascript
-const instance = ImagePreview([
-  'https://img.yzcdn.cn/1.jpg',
-  'https://img.yzcdn.cn/2.jpg'
-]);
+Toast.success('成功文案');
+Toast.fail('失败文案');
+```
 
-setTimeout(() => {
-  instance.close();
+
+##### 高级用法
+
+```javascript
+const toast = Toast.loading({
+  duration: 0,       // 持续展示 toast
+  forbidClick: true, // 禁用背景点击
+  message: '倒计时 3 秒'
+});
+
+let second = 3;
+const timer = setInterval(() => {
+  second--;
+  if (second) {
+    toast.message = `倒计时 ${second} 秒`;
+  } else {
+    clearInterval(timer);
+    Toast.clear();
+  }
 }, 1000);
 ```
 
-#### 方法参数
+##### 组件内调用
+引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 $toast 方法，便于在组件内调用。
 
-| 参数名 | 说明 | 类型 |
-|-----------|-----------|-----------|
-| imageUrls | 需要预览的图片 | `Array` |
-| startPosition | 图片预览起始位置索引 | `Number` |
+```js
+export default {
+  mounted() {
+    this.$toast('提示文案');
+  }
+}
+```
+
+
+
+#### 方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| Toast | `options | message` | toast 实例 | 展示提示 |
+| Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
+| Toast.success | `options | message` | toast 实例 | 展示成功提示 |
+| Toast.fail | `options | message` | toast 实例 | 展示失败提示 |
+| Toast.clear | - | `void` | 关闭提示 |
+
+#### Options
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| type | 提示类型 | `String` | `text` | `loading` `success` `fail` `html` |
+| message | 内容 | `String` | `''` | - |
+| position | 位置 | `String` | `middle` | `top` `bottom` |
+| mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
+| forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
+| duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |
+
+### Dialog 弹出框
+
+#### 使用指南
+
+```js
+import { Dialog } from 'vant';
+```
+
+#### 代码演示
+
+##### 消息提示
+用于提示一些消息，只包含一个确认按钮
+
+```javascript
+Dialog.alert({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
+
+Dialog.alert({
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
+```
+
+##### 消息确认
+用于确认消息，包含取消和确认按钮
+
+```javascript
+Dialog.confirm({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on confirm
+}).catch(() => {
+  // on cancel
+});
+```
+
+##### 组件内调用
+引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 $dialog 方法，便于在组件内调用。
+
+```js
+export default {
+  mounted() {
+    this.$dialog.alert({
+      message: '弹窗内容'
+    });
+  }
+}
+```
+
+#### 方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| Dialog.alert | options | `Promise` | 展示消息提示弹窗 |
+| Dialog.confirm | options | `Promise` | 展示消息确认弹窗 |
+| Dialog.close | - | `void` | 关闭弹窗 |
+
+#### Options
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | `String` | - | - |
+| message | 内容 | `String` | - | - |
+| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` | - |
+| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` | - |
+| confirmButtonText | 确认按钮的文案 | `String` |  `确认` | - |
+| cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
+| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
+| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
+| lockOnScroll | 是否禁用背景滚动 | `Boolean` | `true` | - |
+
+
+

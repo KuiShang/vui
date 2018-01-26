@@ -11,10 +11,16 @@ import Progress from '../packages/progress/index.js'
 import Switch from '../packages/switch/index.js'
 import Cell from '../packages/cell/index.js'
 import CellGroup from '../packages/cell-group/index.js'
+import Field from '../packages/field/index.js'
+import Tab from '../packages/tab/index.js'
+import Tabs from '../packages/tabs/index.js'
 import NavBar from '../packages/nav-bar/index.js'
 import ImagePreview from '../packages/image-preview/index.js'
 import Popup from '../packages/popup/index.js'
 import Lazyload from '../packages/lazyload/index.js'
+import Toast from '../packages/toast/index.js'
+import Dialog from '../packages/dialog/index.js'
+
 const components = [
   Checkbox,
   CheckboxGroup,
@@ -27,10 +33,15 @@ const components = [
   Switch,
   Cell,
   CellGroup,
+  Field,
+  Tab,
+  Tabs,
   NavBar,
   ImagePreview,
   Popup,
-  Lazyload
+  Lazyload,
+  Toast,
+  Dialog
 ]
 
 const install = (Vue, opts = {}) => {
@@ -62,10 +73,15 @@ const vui = {
   Switch,
   Cell,
   CellGroup,
+  Field,
+  Tab,
+  Tabs,
   NavBar,
   ImagePreview,
   Popup,
-  Lazyload
+  Lazyload,
+  Toast,
+  Dialog
 }
 
 export default vui

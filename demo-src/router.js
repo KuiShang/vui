@@ -10,9 +10,13 @@ import progress from './components/progress'
 import Switch from './components/switch'
 import field from './components/field'
 import cell from './components/cell'
+import tab from './components/tab'
 import navBar from './components/navBar'
 import imagePreview from './components/image-preview'
 import lazyload from './components/lazyload'
+import toast from './components/toast'
+import dialog from './components/dialog'
+
 Vue.use(Router)
 const routes = [{
   path: '/',
@@ -60,6 +64,11 @@ const routes = [{
   component: cell
 },
 {
+  path: '/tab',
+  name: 'tab',
+  component: tab
+},
+{
   path: '/navBar',
   name: 'navBar',
   component: navBar
@@ -69,11 +78,24 @@ const routes = [{
   name: 'imagePreview',
   component: imagePreview
 },
+<<<<<<< HEAD
 {
   path: '/lazyload',
   name: 'lazyload',
   component: lazyload
 }]
+=======
+  {
+    path: '/toast',
+    name: 'toast',
+    component: toast
+  },
+  {
+    path: '/dialog',
+    name: 'dialog',
+    component: dialog
+  }]
+>>>>>>> 08f51c8a4a3b3d19d51ab9c36c3daacb95303fe4
 
 export default new Router({
   routes: routes
