@@ -5,7 +5,7 @@
     <p class="page-loadmore-desc">此例请使用手机查看</p>
     <p class="page-loadmore-desc">translate : {{ translate }}</p>
     <div class="loading-background" :style="{ transform: 'scale3d(' + moveTranslate + ',' + moveTranslate + ',1)' }">
-      translateScale : {{ moveTranslate }} 
+      translateScale : {{ moveTranslate }}
     </div>
     <div class="page-loadmore-wrapper" ref="wrapper" :style="{ height: wrapperHeight + 'px' }">
       <vu-loadmore
@@ -19,10 +19,10 @@
         >
         <vu-list :list="list">
           <template slot-scope="props">
-            <div class="ssss page-loadmore-listitem" @click="handleClick(props.listItem)">{{ props.listItem }}</div>
+            <div class="page-loadmore-listitem" @click="handleClick(props.listItem)">{{ props.listItem }}</div>
           </template>
         </vu-list>
-        <div slot="top" class="vu-loadmore-top">
+        <div slot="top" class="vu-loadmore__top">
           <span v-show="topStatus !== 'loading'" :class="{ 'is-rotate': topStatus === 'drop' }">↓</span>
           <span v-show="topStatus === 'loading'">
             <vu-loading type="spinner"></vu-loading>
@@ -141,13 +141,13 @@
     transition: .2s linear;
 }
 
-.vu-loadmore-top span{
+.vu-loadmore__top span{
     display: inline-block;
     transition: .2s linear;
     vertical-align: middle;
 }
 
-.vu-loadmore-top .is-rotate {
+.vu-loadmore__top .is-rotate {
     transform: rotate(180deg);
 }
 

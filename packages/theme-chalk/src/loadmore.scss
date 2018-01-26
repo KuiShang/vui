@@ -31,5 +31,6 @@
 
     @include e(text) {
         vertical-align: middle;
+        color: $gray-dark;
     }
 }
