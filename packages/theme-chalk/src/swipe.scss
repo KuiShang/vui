@@ -32,12 +32,14 @@ $vui-swipe-indicator: 6px;
             }
           }
     }
-    @include e(indicator) {
-        height: 100%;
-        overflow: hidden;
-        @include m(active) {
-            background-color: $orange;
-        }
+    // @include e(indicator) {
+    //     height: 100%;
+    //     overflow: hidden;
+    //     @include m(active) {
+    //         background-color: $orange;
+    //     }
+    // }
+    .vu-swipe__indicator--active {
+        background-color: $orange;
     }
-
 }
