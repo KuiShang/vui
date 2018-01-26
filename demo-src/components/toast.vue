@@ -44,7 +44,7 @@
 
     methods: {
       showToast() {
-        this.$toast(this.text1);
+        Toast(this.text1);
       },
 
       showLoadingToast() {

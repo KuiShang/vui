@@ -4,7 +4,7 @@
 @include b(cell) {
   width: 100%;
   display: table;
-  padding: 10px 0;
+  padding: 10px 15px;
   box-sizing: border-box;
   line-height: 24px;
   position: relative;
@@ -30,7 +30,7 @@
 
     .vu-icon {
       font-size: 16px;
-      margin-right: 5px;
+      margin: auto 5px auto auto;
       vertical-align: middle;
       display:inline-block;
     }
@@ -88,5 +88,9 @@
     color: $gray-dark;
     font-size: 12px;
     margin-top: -1px;
+  }
+  .vui-icon{
+    display: inline-block;
+    margin: auto;
   }
 }

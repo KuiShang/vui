@@ -25,7 +25,7 @@ const createInstance = () => {
   }
 };
 
-const VuToast = (options = {}) => {
+const Toast = (options = {}) => {
   createInstance();
 
   options = typeof options === 'object' ? options : { message: options };
@@ -43,19 +43,19 @@ const VuToast = (options = {}) => {
   return instance;
 };
 
-const createMethod = type => (options = {}) => VuToast({
+const createMethod = type => (options = {}) => Toast({
   type,
   message: typeof options === 'object' ? options.message : options,
   ...options
 });
 
-VuToast.loading = createMethod('loading');
-VuToast.success = createMethod('success');
-VuToast.fail = createMethod('fail');
-VuToast.clear = () => {
+Toast.loading = createMethod('loading');
+Toast.success = createMethod('success');
+Toast.fail = createMethod('fail');
+Toast.clear = () => {
   instance && instance.clear();
 };
 
-Vue.prototype.$toast = VuToast;
+Vue.prototype.$toast = Toast;
 
-export default VuToast;
+export default Toast;

@@ -1,0 +1,147 @@
+@import './common/var.scss';
+@import './mixins/ellipsis.scss';
+
+
+@include b(tabs) {
+  position: relative;
+
+  @include e(wrap) {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    overflow: hidden;
+    position: absolute;
+
+    @include m(page-top) {
+      position: fixed;
+    }
+
+    @include m(content-bottom) {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  @include e(nav) {
+    display: flex;
+    user-select: none;
+    position: relative;
+    background-color: $white;
+
+    @include m(line) {
+      height: 100%;
+      padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
+      box-sizing: content-box;
+    }
+
+    @include m(card) {
+      margin: 0 15px;
+      border-radius: 2px;
+      box-sizing: border-box;
+      height: 30px;
+      border: 1px solid $gray-darker;
+
+      .vu-tab {
+        color: $gray-darker;
+        border-right: 1px solid $gray-darker;
+        line-height: calc(30px - 2px);
+
+        &:last-child {
+          border-right: none;
+        }
+
+        &.vu-tab--active {
+          color: $white;
+          background-color: $gray-darker;
+        }
+      }
+    }
+  }
+
+  @include e(nav-bar) {
+    z-index: 1;
+    left: 0;
+    bottom: 15px;
+    height: 2px;
+    position: absolute;
+    background-color: $red;
+  }
+
+  @include m(scrollable) {
+    .vu-tab {
+      flex: 0 0 22%;
+    }
+
+    .vu-tabs__nav {
+      overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  @include m(line) {
+    padding-top: 44px;
+
+    .vu-tabs__wrap {
+      height: 44px;
+    }
+  }
+
+  @include m(card) {
+    padding-top: 30px;
+
+    .vu-tabs__wrap {
+      height: 30px;
+    }
+  }
+}
+
+@include b(tab) {
+  flex: 1;
+  cursor: pointer;
+  padding: 0 5px;
+  font-size: 14px;
+  position: relative;
+  color: $text-color;
+  line-height: 44px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: $white;
+  min-width: 0; /* hack for flex ellipsis */
+
+  span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+
+  @include m(active) {
+    color: $red;
+  }
+
+  @include m(disabled) {
+    color: $gray;
+
+    &:active {
+      background-color: $white;
+    }
+  }
+
+  @include e(pane) {
+    display: none;
+
+    @include m(select) {
+      display: block;
+    }
+  }
+}
