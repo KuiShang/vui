@@ -13,6 +13,7 @@ import cell from './components/cell'
 import navBar from './components/navBar'
 import imagePreview from './components/image-preview'
 import toast from './components/toast'
+import dialog from './components/dialog'
 
 Vue.use(Router)
 const routes = [{
@@ -74,6 +75,11 @@ const routes = [{
     path: '/toast',
     name: 'toast',
     component: toast
+  },
+  {
+    path: '/dialog',
+    name: 'dialog',
+    component: dialog
   }]
 
 export default new Router({

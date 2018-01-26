@@ -15,6 +15,7 @@ import NavBar from '../packages/nav-bar/index.js'
 import ImagePreview from '../packages/image-preview/index.js'
 import Popup from '../packages/popup/index.js'
 import Toast from '../packages/toast/index.js'
+import Dialog from '../packages/dialog/index.js'
 
 const components = [
   Checkbox,
@@ -31,7 +32,8 @@ const components = [
   NavBar,
   ImagePreview,
   Popup,
-  Toast
+  Toast,
+  Dialog
 ]
 
 const install = (Vue, opts = {}) => {
@@ -62,7 +64,8 @@ const vui = {
   NavBar,
   ImagePreview,
   Popup,
-  Toast
+  Toast,
+  Dialog
 }
 
 export default vui
