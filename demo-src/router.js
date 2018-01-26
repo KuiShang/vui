@@ -14,6 +14,7 @@ import tab from './components/tab'
 import navBar from './components/navBar'
 import imagePreview from './components/image-preview'
 import toast from './components/toast'
+import dialog from './components/dialog'
 
 Vue.use(Router)
 const routes = [{
@@ -66,7 +67,7 @@ const routes = [{
   name: 'tab',
   component: tab
 },
-{ 
+{
   path: '/navBar',
   name: 'navBar',
   component: navBar
@@ -76,11 +77,16 @@ const routes = [{
   name: 'imagePreview',
   component: imagePreview
 },
-{
-  path: '/toast',
-  name: 'toast',
-  component: toast
-}]
+  {
+    path: '/toast',
+    name: 'toast',
+    component: toast
+  },
+  {
+    path: '/dialog',
+    name: 'dialog',
+    component: dialog
+  }]
 
 export default new Router({
   routes: routes

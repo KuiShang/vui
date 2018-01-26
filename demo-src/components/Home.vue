@@ -52,16 +52,25 @@
         <router-link tag="li" class="item-icon-right" :to="{ name: 'imagePreview'}">
           <span class="item-note">imagePreview</span>
         </router-link>
-        <router-link tag="li" class="item-icon-right" :to="{ name: 'toast'}">
-          <span class="item-note">toast轻提示</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </router-link>
 
         <router-link tag="li" class="item-icon-right" :to="{ name: 'field'}">
           Field <span class="item-note">输入框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
+      </ul>
+
+      <h3>操作提示</h3>
+      <ul class="list-ios hl-list-borderless">
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'dialog'}">
+          <span class="item-note">dialog弹出框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+
+        <router-link tag="li" class="item-icon-right" :to="{ name: 'toast'}">
+          <span class="item-note">toast轻提示</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
       </ul>
 
       <!-- layout -->

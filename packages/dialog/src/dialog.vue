@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import VuButton from 'vui/packages/icon-button';
+  import VuButton from 'vui/packages/button';
   import Popup from 'vui/packages/popup';
 
   export default {
